@@ -82,6 +82,78 @@
 
     font-size: 14px;
 }
+    .minecraft-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+.feature-box {
+    padding: 32px;
+
+    min-height: 210px;
+
+    background: rgba(255,255,255,0.025);
+
+    border: 1px solid rgba(232,225,212,0.09);
+
+    transition: 0.35s;
+}
+
+.feature-box:hover {
+    transform: translateY(-6px);
+
+    border-color: #b99a5b;
+
+    background: rgba(185,154,91,0.05);
+}
+
+.feature-box span {
+    display: block;
+
+    font-size: 34px;
+
+    margin-bottom: 18px;
+}
+
+.feature-box h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.feature-box p {
+    color: #8f8981;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .minecraft-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .minecraft-features {
+        grid-template-columns: 1fr;
+    }
+
+}
     <style>
 
         .game-page {
@@ -431,7 +503,111 @@
             </div>
 
         </section>
+        
+<!-- MINECRAFT FEATURES -->
 
+<section class="minecraft-content">
+
+    <div class="section-heading left">
+
+        <p>DISCOVER THE GAME</p>
+
+        <h2>
+            WHAT CAN YOU <span>DO?</span>
+        </h2>
+
+    </div>
+
+
+    <div class="minecraft-features">
+
+        <div class="feature-box">
+
+            <span>⛏️</span>
+
+            <h3>Survival</h3>
+
+            <p>
+                Gather resources, craft equipment,
+                build your base and survive the world.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <span>🏰</span>
+
+            <h3>Build</h3>
+
+            <p>
+                Create houses, cities, kingdoms,
+                farms and anything you can imagine.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <span>⚔️</span>
+
+            <h3>PvP</h3>
+
+            <p>
+                Compete against other players,
+                participate in battles and prove
+                your skills.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <span>🌎</span>
+
+            <h3>Explore</h3>
+
+            <p>
+                Discover biomes, structures,
+                caves, villages and hidden locations.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <span>👥</span>
+
+            <h3>Multiplayer</h3>
+
+            <p>
+                Play together with friends and
+                become part of the AlienZord community.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <span>🏆</span>
+
+            <h3>Events</h3>
+
+            <p>
+                Join community events, challenges,
+                tournaments and special activities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
         <!-- ALIENZORD SYSTEM -->
