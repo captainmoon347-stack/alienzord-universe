@@ -15,7 +15,73 @@
     >
 
     <link rel="stylesheet" href="style.css">
+.game-visual {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 7%;
+}
 
+.visual-card {
+    min-height: 420px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.9),
+            rgba(0,0,0,0.15)
+        ),
+        linear-gradient(
+            135deg,
+            #25251f,
+            #11110f
+        );
+
+    border: 1px solid rgba(185,154,91,0.25);
+}
+
+.visual-card::before {
+    content: "MINECRAFT";
+
+    position: absolute;
+
+    right: -40px;
+    top: 40px;
+
+    font-size: 90px;
+    font-weight: 900;
+
+    color: rgba(185,154,91,0.05);
+
+    transform: rotate(90deg);
+}
+
+.visual-content {
+    position: relative;
+    max-width: 650px;
+    padding: 50px;
+}
+
+.visual-content h2 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 0.95;
+    margin-bottom: 20px;
+}
+
+.visual-content h2 span {
+    color: #b99a5b;
+}
+
+.visual-content p:last-child {
+    color: #a09a91;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+}
     <style>
 
         .game-page {
