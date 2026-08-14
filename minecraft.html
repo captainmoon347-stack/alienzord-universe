@@ -152,8 +152,95 @@
     .minecraft-features {
         grid-template-columns: 1fr;
     }
+.access-intro {
+    max-width: 700px;
+
+    margin-bottom: 40px;
+
+    color: #918b82;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+}
+
+.access-steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.access-step {
+    padding: 28px 22px;
+
+    background: rgba(255,255,255,0.025);
+
+    border: 1px solid rgba(232,225,212,0.09);
+
+    transition: 0.35s;
+}
+
+.access-step:hover {
+    transform: translateY(-6px);
+
+    border-color: #b99a5b;
+}
+
+.step-number {
+    color: #b99a5b;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.access-step h3 {
+    font-size: 17px;
+
+    margin-bottom: 12px;
+}
+
+.access-step p {
+    color: #8f8981;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
+}
+
+.access-step .secondary-btn {
+    padding: 9px 13px;
+
+    font-size: 9px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .access-steps {
+        grid-template-columns: 1fr 1fr;
+    }
 
 }
+
+
+@media (max-width: 550px) {
+
+    .access-steps {
+        grid-template-columns: 1fr;
+    }
+
+}
+
     <style>
 
         .game-page {
@@ -608,7 +695,139 @@
     </div>
 
 </section>
+        
+<!-- GAMEHUB ACCESS -->
 
+<section class="minecraft-content">
+
+    <div class="section-heading left">
+
+        <p>ALIENZORD COMMUNITY</p>
+
+        <h2>
+            UNLOCK <span>GAMEHUB</span>
+        </h2>
+
+    </div>
+
+
+    <div class="access-intro">
+
+        <p>
+            Want to become part of the AlienZord Minecraft
+            GameHub? Join our Discord community, participate
+            in the community and level up your profile.
+        </p>
+
+    </div>
+
+
+    <div class="access-steps">
+
+
+        <div class="access-step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                JOIN DISCORD
+            </h3>
+
+            <p>
+                Enter the official AlienZord Universe
+                Discord community.
+            </p>
+
+            <a
+                href="https://discord.gg/Jzn6PaJcd"
+                class="secondary-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                JOIN DISCORD
+            </a>
+
+        </div>
+
+
+        <div class="access-step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                LEVEL UP
+            </h3>
+
+            <p>
+                Participate in discussions, events and
+                community activities to increase your
+                Discord level.
+            </p>
+
+        </div>
+
+
+        <div class="access-step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                EARN THE RANK
+            </h3>
+
+            <p>
+                Reach the required community level and
+                unlock the required AlienZord GameHub role.
+            </p>
+
+        </div>
+
+
+        <div class="access-step">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <h3>
+                ENTER GAMEHUB
+            </h3>
+
+            <p>
+                Once eligible, you can access Minecraft
+                GameHub activities and special events.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="requirements">
+
+        <strong>
+            🏆 CURRENT ACCESS REQUIREMENT
+        </strong>
+
+        <p>
+            Required Discord level:
+            <strong>CHAMPION</strong>
+        </p>
+
+        <p>
+            The exact level number and role permissions
+            will be announced in the official Discord.
+        </p>
+
+    </div>
+
+</section>
 
         <!-- ALIENZORD SYSTEM -->
 
@@ -664,7 +883,6 @@
             </div>
 
         </section>
-
 
 
         <!-- OFFICIAL LINKS -->
