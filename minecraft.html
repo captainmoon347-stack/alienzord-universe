@@ -16,6 +16,95 @@
 
     <link rel="stylesheet" href="style.css">
 
+    /* =========================================
+   ALIENZORD MINECRAFT GALLERY
+========================================= */
+
+.minecraft-gallery {
+    max-width: 1250px;
+    margin: auto;
+    padding: 70px 7%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.gallery-card {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    border: 1px solid rgba(232,225,212,0.10);
+    background: #111;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.gallery-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.90),
+        rgba(0,0,0,0.05) 70%
+    );
+}
+
+.gallery-card:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-content {
+    position: absolute;
+    z-index: 2;
+    left: 28px;
+    right: 28px;
+    bottom: 25px;
+}
+
+.gallery-number {
+    color: #b99a5b;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.gallery-content h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.gallery-content p {
+    color: #d0cbc3;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    max-width: 500px;
+}
+
+@media (max-width: 650px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card,
+    .gallery-card img {
+        min-height: 300px;
+    }
+
+}
 
     <style>
 
@@ -671,6 +760,150 @@
 
         </section>
 
+        <!-- =========================================
+     ALIENZORD MINECRAFT GALLERY
+========================================= -->
+
+<section class="minecraft-gallery">
+
+    <div class="section-heading left">
+
+        <p>
+            ALIENZORD × MINECRAFT
+        </p>
+
+        <h2>
+            ENTER THE
+            <span>WORLD</span>
+        </h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+        <!-- SURVIVAL -->
+
+        <div class="gallery-card">
+
+            <img
+                src="images/minecraft-survival.png"
+                alt="AlienZord Minecraft Survival"
+            >
+
+            <div class="gallery-content">
+
+                <div class="gallery-number">
+                    01 — SURVIVAL
+                </div>
+
+                <h3>
+                    SURVIVE
+                </h3>
+
+                <p>
+                    Gather resources, explore the world
+                    and build your own Minecraft journey
+                    with the AlienZord community.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PVP -->
+
+        <div class="gallery-card">
+
+            <img
+                src="images/minecraft-pvp.png"
+                alt="AlienZord Minecraft PvP"
+            >
+
+            <div class="gallery-content">
+
+                <div class="gallery-number">
+                    02 — PVP
+                </div>
+
+                <h3>
+                    BATTLE
+                </h3>
+
+                <p>
+                    Test your skills, compete with players
+                    and enter AlienZord PvP activities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUILD -->
+
+        <div class="gallery-card">
+
+            <img
+                src="images/minecraft-build.png"
+                alt="AlienZord Minecraft Build"
+            >
+
+            <div class="gallery-content">
+
+                <div class="gallery-number">
+                    03 — BUILD
+                </div>
+
+                <h3>
+                    CREATE
+                </h3>
+
+                <p>
+                    Build kingdoms, cities, bases and
+                    anything your imagination can create.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENTS -->
+
+        <div class="gallery-card">
+
+            <img
+                src="images/minecraft-events.png"
+                alt="AlienZord Minecraft Events"
+            >
+
+            <div class="gallery-content">
+
+                <div class="gallery-number">
+                    04 — EVENTS
+                </div>
+
+                <h3>
+                    COMPETE
+                </h3>
+
+                <p>
+                    Join community events, challenges,
+                    tournaments and special AlienZord
+                    activities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
 
 
         <!-- =========================================
