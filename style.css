@@ -1022,4 +1022,134 @@ footer > p {
         gap: 15px;
     }
 }
+/* =========================================
+   ALIENZORD PREMIUM GLOW BUTTONS
+   ========================================= */
 
+.az-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 145px;
+    padding: 12px 20px;
+
+    margin-top: 16px;
+
+    border: 1px solid rgba(255, 70, 120, 0.75);
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 40, 80, 0.95),
+            rgba(125, 40, 255, 0.95)
+        );
+
+    color: #ffffff !important;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+
+    box-shadow:
+        0 0 8px rgba(255, 40, 90, 0.45),
+        0 0 18px rgba(130, 40, 255, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.az-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    filter: brightness(1.2);
+
+    box-shadow:
+        0 0 10px rgba(255, 40, 90, 0.8),
+        0 0 25px rgba(130, 40, 255, 0.65),
+        0 0 45px rgba(255, 40, 90, 0.3);
+}
+
+
+/* Small Explore Here button */
+
+.az-explore {
+    min-width: auto;
+
+    padding: 8px 13px;
+
+    margin-top: 12px;
+
+    font-size: 9px;
+    letter-spacing: 1.2px;
+
+    border-radius: 5px;
+}
+
+
+/* Different button glow variations */
+
+.az-red {
+    background: linear-gradient(
+        135deg,
+        #ff304f,
+        #8b1cff
+    );
+}
+
+.az-purple {
+    background: linear-gradient(
+        135deg,
+        #9b35ff,
+        #ff305f
+    );
+}
+
+.az-orange {
+    background: linear-gradient(
+        135deg,
+        #ff5b35,
+        #b522ff
+    );
+}
+
+.az-blue {
+    background: linear-gradient(
+        135deg,
+        #ff315d,
+        #3d55ff
+    );
+}
+
+
+/* Card button positioning */
+
+.feature-box .az-btn,
+.info-card .az-btn,
+.game-card .az-btn {
+    margin-top: 14px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .az-btn {
+        min-width: 125px;
+        padding: 10px 15px;
+        font-size: 9px;
+    }
+
+    .az-explore {
+        padding: 7px 11px;
+        font-size: 8px;
+    }
+}
