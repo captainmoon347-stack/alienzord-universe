@@ -1,1 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Survival | AlienZord Minecraft</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #080808;
+            color: #eee8df;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            height: 78px;
+            padding: 0 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom: 1px solid
+                rgba(232,225,212,0.10);
+
+            background: #080808;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: #99938b;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #b99a5b;
+        }
+
+        .discord-top {
+            border: 1px solid #b99a5b;
+            padding: 10px 18px;
+
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+        .discord-top:hover {
+            background: #b99a5b;
+            color: #080808;
+        }
+
+
+        /* MAIN */
+
+        .page {
+            max-width: 1050px;
+            margin: auto;
+            padding: 100px 7% 80px;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding-bottom: 65px;
+        }
+
+        .label {
+            color: #b99a5b;
+
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 105px);
+            line-height: 0.95;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #b99a5b;
+        }
+
+        .hero-intro {
+            max-width: 750px;
+            margin: auto;
+
+            color: #99938b;
+
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+
+        /* CONTENT */
+
+        .content-section {
+            padding: 70px 0;
+
+            border-top: 1px solid
+                rgba(232,225,212,0.08);
+        }
+
+        .content-section h2 {
+            font-size: clamp(34px, 6vw, 60px);
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .content-section h2 span {
+            color: #b99a5b;
+        }
+
+        .content-section p {
+            max-width: 850px;
+
+            color: #a09a92;
+
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* MAIN IMAGE */
+
+        .survival-image {
+            width: 100%;
+            margin: 20px 0 80px;
+
+            border: 1px solid
+                rgba(232,225,212,0.12);
+
+            display: block;
+        }
+
+
+        /* TEXT INFORMATION */
+
+        .info-block {
+            margin-top: 35px;
+        }
+
+        .info-block h3 {
+            color: #eee8df;
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .info-block h3 span {
+            color: #b99a5b;
+        }
+
+
+        /* FINAL MESSAGE */
+
+        .final-section {
+            text-align: center;
+
+            padding: 80px 0 50px;
+
+            border-top: 1px solid
+                rgba(232,225,212,0.08);
+        }
+
+        .final-section h2 {
+            font-size: clamp(35px, 6vw, 60px);
+
+            margin-bottom: 20px;
+        }
+
+        .final-section h2 span {
+            color: #b99a5b;
+        }
+
+        .final-section p {
+            max-width: 720px;
+            margin: auto;
+
+            color: #99938b;
+
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+
+        /* BUTTONS */
+
+        .buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 12px 20px;
+
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            border: 1px solid
+                rgba(232,225,212,0.25);
+
+            transition: 0.3s;
+        }
+
+        .btn-discord {
+            background: #b99a5b;
+            color: #080808;
+
+            border-color: #b99a5b;
+        }
+
+        .btn-youtube {
+            border-color: #8b1e1e;
+            color: #ffffff;
+            background: #8b1e1e;
+        }
+
+        .btn-back {
+            border-color: rgba(232,225,212,0.3);
+            color: #eee8df;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            padding: 35px 7%;
+
+            text-align: center;
+
+            border-top: 1px solid
+                rgba(232,225,212,0.08);
+        }
+
+        footer p {
+            color: #6f6a64;
+
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .discord-top {
+                padding: 8px 11px;
+                font-size: 8px;
+            }
+
+            .page {
+                padding-top: 65px;
+            }
+
+            .content-section {
+                padding: 55px 0;
+            }
+
+            .survival-image {
+                margin-bottom: 50px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        ALIENZORD
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="minecraft.html">
+            GAMEHUB
+        </a>
+
+        <a href="index.html#community">
+            COMMUNITY
+        </a>
+
+    </div>
+
+
+    <a
+        href="https://discord.gg/Jzn6PaJcd"
+        target="_blank"
+        class="discord-top"
+    >
+        JOIN DISCORD
+    </a>
+
+</nav>
+
+
+
+<main class="page">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="label">
+        ALIENZORD × MINECRAFT
+    </div>
+
+    <h1>
+        SURVIVAL
+        <span>MODE</span>
+    </h1>
+
+    <p class="hero-intro">
+
+        Enter a world where every block has a purpose,
+        every journey creates a story and every decision
+        shapes your adventure.
+
+        Minecraft Survival gives you the freedom to
+        gather, build, explore and create your own legacy
+        inside the AlienZord Universe.
+
+    </p>
+
+</section>
+
+
+
+<!-- FIRST DETAILS -->
+
+<section class="content-section">
+
+    <div class="label">
+        01 — THE EXPERIENCE
+    </div>
+
+    <h2>
+        BUILD YOUR
+        <span>LEGACY.</span>
+    </h2>
+
+    <p>
+
+        Survival begins with almost nothing.
+
+        Gather your first resources, craft basic tools,
+        find a safe location and create a place that you
+        can call home.
+
+    </p>
+
+    <p>
+
+        As you progress, your small beginning can become
+        a powerful base, a massive kingdom or a complete
+        world created around your own imagination.
+
+    </p>
+
+    <p>
+
+        Explore the environment, discover rare resources,
+        improve your equipment and prepare yourself for
+        everything the world can throw at you.
+
+    </p>
+
+</section>
+
+
+
+<!-- IMAGE -->
+
+<img
+    src="images/minecraft-survival.png"
+    alt="AlienZord Minecraft Survival"
+    class="survival-image"
+>
+
+
+
+<!-- DETAILS AFTER IMAGE -->
+
+<section class="content-section">
+
+    <div class="label">
+        02 — SURVIVAL WORLD
+    </div>
+
+    <h2>
+        YOUR WORLD.
+        <span>YOUR STORY.</span>
+    </h2>
+
+
+    <div class="info-block">
+
+        <h3>
+            <span>01.</span>
+            Explore
+        </h3>
+
+        <p>
+
+            Travel through different biomes, discover
+            villages, caves and structures and search
+            for locations that can become part of your
+            adventure.
+
+        </p>
+
+    </div>
+
+
+    <div class="info-block">
+
+        <h3>
+            <span>02.</span>
+            Gather Resources
+        </h3>
+
+        <p>
+
+            Collect wood, stone, ores, food and other
+            materials. Every resource helps you progress
+            further and create better equipment.
+
+        </p>
+
+    </div>
+
+
+    <div class="info-block">
+
+        <h3>
+            <span>03.</span>
+            Build
+        </h3>
+
+        <p>
+
+            Create your own home, farms, storage systems,
+            castles, cities or anything else you can
+            imagine.
+
+        </p>
+
+    </div>
+
+
+    <div class="info-block">
+
+        <h3>
+            <span>04.</span>
+            Survive
+        </h3>
+
+        <p>
+
+            Prepare yourself for hostile mobs, dangerous
+            environments and unexpected situations.
+            Upgrade your equipment and keep improving
+            your survival skills.
+
+        </p>
+
+    </div>
+
+
+    <div class="info-block">
+
+        <h3>
+            <span>05.</span>
+            Create Your Adventure
+        </h3>
+
+        <p>
+
+            Minecraft does not force you to follow one
+            path. Create your own goals, build your own
+            projects and decide what your survival journey
+            means to you.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ALIENZORD COMMUNITY -->
+
+<section class="content-section">
+
+    <div class="label">
+        03 — ALIENZORD COMMUNITY
+    </div>
+
+    <h2>
+        SURVIVE
+        <span>TOGETHER.</span>
+    </h2>
+
+    <p>
+
+        The AlienZord Universe is built around community,
+        creativity and gaming.
+
+        Connect with other players, share your builds,
+        participate in Minecraft activities and stay
+        updated about upcoming events through our Discord
+        community.
+
+    </p>
+
+    <p>
+
+        Whether you are a builder, explorer, fighter or
+        someone who simply enjoys creating a world of your
+        own, there is always something new to experience.
+
+    </p>
+
+</section>
+
+
+
+<!-- FINAL -->
+
+<section class="final-section">
+
+    <div class="label">
+        ALIENZORD UNIVERSE
+    </div>
+
+    <h2>
+        READY TO
+        <span>PLAY?</span>
+    </h2>
+
+    <p>
+
+        Join the AlienZord community and become part of
+        the journey.
+
+        Follow the community, watch our latest content
+        and discover what's coming next.
+
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+            href="https://discord.gg/Jzn6PaJcd"
+            target="_blank"
+            class="btn btn-discord"
+        >
+            JOIN DISCORD
+        </a>
+
+
+        <a
+            href="https://youtube.com/@alienzostudio775?si=mRLF1DGr3kPfoSP8"
+            target="_blank"
+            class="btn btn-youtube"
+        >
+            WATCH YOUTUBE
+        </a>
+
+
+        <a
+            href="minecraft.html"
+            class="btn btn-back"
+        >
+            ← BACK TO MINECRAFT
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        ALIENZORD UNIVERSE — MINECRAFT SURVIVAL
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
