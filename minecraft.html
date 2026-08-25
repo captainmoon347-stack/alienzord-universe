@@ -16,6 +16,27 @@
 
     <link rel="stylesheet" href="style.css">
 
+    .game-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.game-link strong {
+    display: block;
+    margin-top: 18px;
+    color: #b99a5b;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.game-link:hover {
+    transform: translateY(-5px);
+    border-color: rgba(185,154,91,0.55);
+}
 
     <style>
 
@@ -766,20 +787,21 @@
             <div class="minecraft-features">
 
 
-                <div class="feature-box">
+            <a href="minecraft-survival.html" class="feature-box game-link">
 
-                    <span>⛏️</span>
+    <span>⛏️</span>
 
-                    <h3>
-                        Survival
-                    </h3>
+    <h3>Survival</h3>
 
-                    <p>
-                        Gather resources, craft equipment,
-                        build your base and survive the world.
-                    </p>
+    <p>
+        Gather resources, explore the world,
+        build your base and create your own
+        survival journey with AlienZord.
+    </p>
 
-                </div>
+    <strong>EXPLORE SURVIVAL →</strong>
+
+            </a>
 
 
                 <div class="feature-box">
