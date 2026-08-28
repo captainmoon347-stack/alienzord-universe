@@ -1426,3 +1426,58 @@ button.explore-btn:active {
         min-height: 38px !important;
     }
 }
+/* =====================================================
+   ALIENZORD GAME HUB — EQUAL CARD SIZE FIX
+   ===================================================== */
+
+.minecraft-features {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    align-items: start !important;
+}
+
+.minecraft-features .feature-box {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    padding: 28px !important;
+    margin: 0 !important;
+}
+
+/* Prevent cards from becoming unnecessarily tall */
+.minecraft-features .feature-box p {
+    max-width: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+/* Compact Explore button */
+.minecraft-features .explore-btn,
+.minecraft-features a.explore-btn {
+    width: auto !important;
+    min-width: 145px !important;
+    max-width: 180px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 15px !important;
+    margin-top: 18px !important;
+    align-self: flex-start !important;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .minecraft-features {
+        grid-template-columns: 1fr !important;
+    }
+
+    .minecraft-features .feature-box {
+        padding: 24px !important;
+    }
+}
