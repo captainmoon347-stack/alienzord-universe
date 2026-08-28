@@ -1022,225 +1022,302 @@ footer > p {
         gap: 15px;
     }
 }
-/* =========================================
-   ALIENZORD PREMIUM GLOW BUTTONS
-   ========================================= */
+/* ==========================================
+   ALIENZORD GAMEHUB
+   COMPACT CARDS + GLOW EXPLORE BUTTONS
+   ========================================== */
 
-.az-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.minecraft-features {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 0 20px;
 
-    min-width: 145px;
-    padding: 12px 20px;
-
-    margin-top: 16px;
-
-    border: 1px solid rgba(255, 70, 120, 0.75);
-    border-radius: 6px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255, 40, 80, 0.95),
-            rgba(125, 40, 255, 0.95)
-        );
-
-    color: #ffffff !important;
-
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none !important;
-
-    box-shadow:
-        0 0 8px rgba(255, 40, 90, 0.45),
-        0 0 18px rgba(130, 40, 255, 0.25);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        filter 0.25s ease;
-}
-
-.az-btn:hover {
-    transform: translateY(-3px) scale(1.03);
-
-    filter: brightness(1.2);
-
-    box-shadow:
-        0 0 10px rgba(255, 40, 90, 0.8),
-        0 0 25px rgba(130, 40, 255, 0.65),
-        0 0 45px rgba(255, 40, 90, 0.3);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
 
-/* Small Explore Here button */
-
-.az-explore {
-    min-width: auto;
-
-    padding: 8px 13px;
-
-    margin-top: 12px;
-
-    font-size: 9px;
-    letter-spacing: 1.2px;
-
-    border-radius: 5px;
-}
-
-
-/* Different button glow variations */
-
-.az-red {
-    background: linear-gradient(
-        135deg,
-        #ff304f,
-        #8b1cff
-    );
-}
-
-.az-purple {
-    background: linear-gradient(
-        135deg,
-        #9b35ff,
-        #ff305f
-    );
-}
-
-.az-orange {
-    background: linear-gradient(
-        135deg,
-        #ff5b35,
-        #b522ff
-    );
-}
-
-.az-blue {
-    background: linear-gradient(
-        135deg,
-        #ff315d,
-        #3d55ff
-    );
-}
-
-
-/* Card button positioning */
-
-.feature-box .az-btn,
-.info-card .az-btn,
-.game-card .az-btn {
-    margin-top: 14px;
-}
-
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .az-btn {
-        min-width: 125px;
-        padding: 10px 15px;
-        font-size: 9px;
-    }
-
-    .az-explore {
-        padding: 7px 11px;
-        font-size: 8px;
-    }
-}
-/* =========================================
-   ALIENZORD — COMPACT EXPLORE BUTTONS
-   ========================================= */
-
-.explore-btn {
-    display: inline-flex;
-    width: fit-content;
-    min-width: 150px;
-    max-width: 190px;
-    padding: 11px 18px;
-    margin-top: 18px;
-
-    align-items: center;
-    justify-content: center;
-
-    background: linear-gradient(135deg, #ff3b5c, #b51cff);
-    color: #ffffff;
-
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 6px;
-
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    box-shadow:
-        0 0 10px rgba(255, 45, 90, 0.35),
-        0 0 20px rgba(181, 28, 255, 0.20);
-
-    transition: all 0.25s ease;
-    cursor: pointer;
-}
-
-/* Hover effect */
-.explore-btn:hover {
-    transform: translateY(-2px);
-
-    background: linear-gradient(135deg, #ff174d, #d000ff);
-
-    box-shadow:
-        0 0 14px rgba(255, 45, 90, 0.60),
-        0 0 28px rgba(181, 28, 255, 0.45);
-}
-
-
-/* =========================================
-   GAME FEATURE CARDS
-   ========================================= */
+/* ==========================================
+   NORMAL GAME CARD
+   ========================================== */
 
 .feature-box {
     position: relative;
-    overflow: hidden;
-    min-height: 0;
+
+    min-height: 260px;
     height: auto;
+
+    padding: 28px 26px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(232, 225, 212, 0.10);
+
+    border-radius: 0;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
-/* Make sure cards don't become giant buttons */
-.feature-box a {
+/* Card hover */
+
+.feature-box:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(220, 45, 120, 0.45);
+
+    box-shadow:
+        0 0 15px rgba(255, 40, 90, 0.12),
+        0 0 30px rgba(170, 30, 255, 0.08);
+}
+
+
+/* ==========================================
+   CARD ICON
+   ========================================== */
+
+.feature-box > span {
+    display: block;
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================
+   CARD TITLE
+   ========================================== */
+
+.feature-box h3 {
+    margin: 0 0 12px;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+    color: #f1eadf;
+}
+
+
+/* ==========================================
+   CARD DESCRIPTION
+   ========================================== */
+
+.feature-box p {
+    margin: 0;
+
+    max-width: 430px;
+
+    color: #918b82;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   COMPACT EXPLORE BUTTON
+   ========================================== */
+
+.explore-btn {
+    display: inline-flex;
+
     width: fit-content;
+
+    min-width: 145px;
+
+    height: auto;
+
+    padding: 10px 17px;
+
+    margin-top: 20px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #ff3b5c,
+        #b51cff
+    );
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255,255,255,0.20);
+
+    border-radius: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 0 8px rgba(255, 50, 90, 0.45),
+        0 0 18px rgba(180, 30, 255, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
 }
 
 
-/* =========================================
-   REMOVE GIANT EXPLORE AREA
-   ========================================= */
+/* ==========================================
+   EXPLORE BUTTON HOVER
+   ========================================== */
+
+.explore-btn:hover {
+
+    transform: translateY(-2px);
+
+    filter: brightness(1.15);
+
+    box-shadow:
+        0 0 12px rgba(255, 50, 90, 0.70),
+        0 0 25px rgba(180, 30, 255, 0.55);
+}
+
+
+/* ==========================================
+   MAKE SURE BUTTON DOES NOT BECOME HUGE
+   ========================================== */
 
 .feature-box .explore-btn {
+
     position: static;
-    display: inline-flex;
+
+    width: fit-content;
+
+    max-width: 190px;
+
+    min-height: 0;
+
+    height: auto;
+
+    flex: none;
 }
 
 
-/* =========================================
+/* ==========================================
+   REMOVE GIANT CLICKABLE CARD BEHAVIOUR
+   ========================================== */
+
+.feature-box > a {
+
+    display: inline-flex;
+
+    width: fit-content;
+
+    height: auto;
+
+    min-height: 0;
+}
+
+
+/* ==========================================
    MOBILE
-   ========================================= */
+   ========================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    .explore-btn {
-        min-width: 135px;
-        max-width: 170px;
-        padding: 10px 14px;
-        font-size: 11px;
-        letter-spacing: 1.2px;
+    .minecraft-features {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+
+    }
+
+    .feature-box {
+
+        min-height: 240px;
+
+        padding: 24px 22px;
+
     }
 
 }
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 550px) {
+
+    .minecraft-features {
+
+        grid-template-columns: 1fr;
+
+        padding: 0 15px;
+
+        gap: 14px;
+
+    }
+
+    .feature-box {
+
+        min-height: 0;
+
+        padding: 24px 20px;
+
+    }
+
+    .feature-box > span {
+
+        font-size: 34px;
+
+        margin-bottom: 18px;
+
+    }
+
+    .feature-box h3 {
+
+        font-size: 20px;
+
+    }
+
+    .feature-box p {
+
+        font-size: 12px;
+
+        line-height: 1.6;
+
+    }
+
+    .explore-btn {
+
+        min-width: 135px;
+
+        padding: 9px 14px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.2px;
+
+    }
+
+}
+
