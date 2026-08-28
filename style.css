@@ -1321,3 +1321,108 @@ footer > p {
 
 }
 
+/* =========================================================
+   ALIENZORD — FINAL COMPACT GLOW BUTTON SYSTEM
+   ========================================================= */
+
+.explore-btn,
+a.explore-btn,
+button.explore-btn {
+    display: inline-flex !important;
+    position: static !important;
+    width: auto !important;
+    min-width: 155px !important;
+    max-width: 190px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    margin-top: 20px !important;
+    padding: 0 16px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+
+    background: linear-gradient(
+        135deg,
+        #ff3b5c 0%,
+        #d51cff 100%
+    ) !important;
+
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    border-radius: 5px !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: 1.3px !important;
+
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+
+    box-shadow:
+        0 0 7px rgba(255, 45, 90, 0.55),
+        0 0 16px rgba(180, 30, 255, 0.32) !important;
+
+    cursor: pointer !important;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease !important;
+}
+
+/* Never allow the card itself to stretch the button */
+.feature-box > a.explore-btn,
+.game-card > a.explore-btn,
+.ent-card > a.explore-btn,
+.business-card > a.explore-btn,
+.social-card > a.explore-btn {
+    width: auto !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    flex: 0 0 auto !important;
+    align-self: flex-start !important;
+}
+
+/* Premium glow on hover */
+.explore-btn:hover,
+a.explore-btn:hover,
+button.explore-btn:hover {
+    transform: translateY(-2px) !important;
+    filter: brightness(1.16) !important;
+    box-shadow:
+        0 0 10px rgba(255, 45, 90, 0.80),
+        0 0 24px rgba(180, 30, 255, 0.62) !important;
+}
+
+/* Click effect */
+.explore-btn:active,
+a.explore-btn:active,
+button.explore-btn:active {
+    transform: translateY(0) scale(0.98) !important;
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+    .explore-btn,
+    a.explore-btn,
+    button.explore-btn {
+        min-width: 140px !important;
+        max-width: 175px !important;
+        height: 38px !important;
+        min-height: 38px !important;
+        padding: 0 14px !important;
+        font-size: 9px !important;
+        letter-spacing: 1.1px !important;
+    }
+
+    .feature-box > a.explore-btn,
+    .game-card > a.explore-btn,
+    .ent-card > a.explore-btn,
+    .business-card > a.explore-btn,
+    .social-card > a.explore-btn {
+        height: 38px !important;
+        min-height: 38px !important;
+    }
+}
