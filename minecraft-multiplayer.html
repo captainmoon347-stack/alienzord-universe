@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multiplayer | AlienZord Minecraft</title>
+
+    <meta
+        name="description"
+        content="Minecraft Multiplayer and Voice Chat — AlienZord Universe"
+    >
+
+    <style>
+
+        /* =========================================
+           ALIENZORD MULTIPLAYER
+           CYAN + BLUE + PURPLE THEME
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #07090c;
+            color: #e7edf2;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 78px;
+
+            padding: 0 6%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background:
+                rgba(7, 9, 12, 0.95);
+
+            border-bottom:
+                1px solid rgba(54, 220, 255, 0.15);
+
+            backdrop-filter: blur(18px);
+
+            z-index: 9999;
+        }
+
+
+        .logo {
+
+            color: #e7edf2;
+
+            font-size: 24px;
+
+            font-weight: 900;
+
+            letter-spacing: 4px;
+        }
+
+
+        .logo span {
+            color: #35d9ff;
+        }
+
+
+        .navbar nav {
+
+            display: flex;
+
+            gap: 28px;
+        }
+
+
+        .navbar nav a {
+
+            position: relative;
+
+            color: #8e99a3;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+
+        .navbar nav a:hover {
+            color: #e7edf2;
+        }
+
+
+        .navbar nav a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 1px;
+
+            background: #35d9ff;
+
+            transition: 0.3s;
+        }
+
+
+        .navbar nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================================
+           NAV DISCORD
+        ========================================= */
+
+        .discord-btn {
+
+            padding: 11px 20px;
+
+            border:
+                1px solid #35d9ff;
+
+            color: #dffaff;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+
+        .discord-btn:hover {
+
+            color: #050709;
+
+            background: #35d9ff;
+
+            box-shadow:
+                0 0 22px
+                rgba(53, 217, 255, 0.45);
+        }
+
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .multiplayer-page {
+
+            padding-top: 78px;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .mp-hero {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                125px 7%
+                90px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid
+                rgba(231,237,242,0.07);
+        }
+
+
+        .small-label {
+
+            margin-bottom: 18px;
+
+            color: #35d9ff;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .mp-hero h1 {
+
+            font-size:
+                clamp(48px, 8vw, 94px);
+
+            line-height: 0.92;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .mp-hero h1 span {
+            color: #35d9ff;
+        }
+
+
+        .hero-text {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            color: #8d98a2;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           VOICE GLOW
+        ========================================= */
+
+        .voice-orb {
+
+            width: 150px;
+
+            height: 150px;
+
+            margin:
+                65px auto
+                10px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(53,217,255,0.45);
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(53,217,255,0.16),
+                    rgba(104,52,255,0.10),
+                    transparent 70%
+                );
+
+            box-shadow:
+
+                0 0 35px
+                rgba(53,217,255,0.18),
+
+                0 0 75px
+                rgba(104,52,255,0.12);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            animation:
+                voicePulse 3s ease-in-out infinite;
+        }
+
+
+        .voice-orb span {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 45px;
+
+            filter:
+                drop-shadow(
+                    0 0 12px
+                    rgba(53,217,255,0.75)
+                );
+        }
+
+
+        @keyframes voicePulse {
+
+            0%,
+            100% {
+
+                transform: scale(1);
+
+                box-shadow:
+                    0 0 35px
+                    rgba(53,217,255,0.18),
+                    0 0 75px
+                    rgba(104,52,255,0.12);
+            }
+
+            50% {
+
+                transform: scale(1.06);
+
+                box-shadow:
+                    0 0 50px
+                    rgba(53,217,255,0.30),
+                    0 0 100px
+                    rgba(104,52,255,0.20);
+            }
+        }
+
+
+        /* =========================================
+           DETAILS
+        ========================================= */
+
+        .mp-details {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                85px 7%
+                90px;
+        }
+
+
+        .section-label {
+
+            margin-bottom: 15px;
+
+            color: #35d9ff;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .mp-details h2 {
+
+            font-size:
+                clamp(38px, 6vw, 66px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .mp-details h2 span {
+            color: #35d9ff;
+        }
+
+
+        .mp-details p {
+
+            max-width: 900px;
+
+            color: #8d98a2;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.95;
+
+            margin-bottom: 21px;
+        }
+
+
+        .mp-details strong {
+            color: #e7edf2;
+        }
+
+
+        /* =========================================
+           VOICE CHAT GUIDE
+        ========================================= */
+
+        .voice-section {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                15px 7%
+                100px;
+        }
+
+
+        .voice-heading {
+
+            margin-bottom: 45px;
+        }
+
+
+        .voice-heading h2 {
+
+            font-size:
+                clamp(38px, 6vw, 66px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .voice-heading h2 span {
+            color: #7b5cff;
+        }
+
+
+        /* =========================================
+           GUIDE ITEMS
+        ========================================= */
+
+        .voice-item {
+
+            display: grid;
+
+            grid-template-columns:
+                80px 1fr;
+
+            gap: 25px;
+
+            padding: 30px 0;
+
+            border-top:
+                1px solid
+                rgba(231,237,242,0.07);
+        }
+
+
+        .voice-item:last-child {
+
+            border-bottom:
+                1px solid
+                rgba(231,237,242,0.07);
+        }
+
+
+        .voice-number {
+
+            color: #35d9ff;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        .voice-content h3 {
+
+            margin-bottom: 8px;
+
+            color: #e7edf2;
+
+            font-size: 20px;
+        }
+
+
+        .voice-content p {
+
+            color: #89949e;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =========================================
+           DISCORD SECTION
+        ========================================= */
+
+        .discord-section {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding:
+                20px 7%
+                90px;
+
+            text-align: center;
+        }
+
+
+        .discord-section h2 {
+
+            font-size:
+                clamp(36px, 6vw, 62px);
+
+            line-height: 1;
+
+            margin-bottom: 24px;
+        }
+
+
+        .discord-section h2 span {
+            color: #7b5cff;
+        }
+
+
+        .discord-section p {
+
+            color: #89949e;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           FINAL
+        ========================================= */
+
+        .final-section {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding:
+                15px 7%
+                90px;
+
+            text-align: center;
+        }
+
+
+        .final-section h2 {
+
+            font-size:
+                clamp(35px, 6vw, 60px);
+
+            line-height: 1;
+
+            margin-bottom: 22px;
+        }
+
+
+        .final-section h2 span {
+            color: #35d9ff;
+        }
+
+
+        .final-section p {
+
+            color: #89949e;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .mp-actions {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+
+            margin-top: 36px;
+        }
+
+
+        .mp-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 150px;
+
+            padding: 11px 19px;
+
+            border: 1px solid;
+
+            border-radius: 3px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+        }
+
+
+        /* DISCORD */
+
+        .mp-discord {
+
+            color: #ffffff;
+
+            border-color: #35d9ff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #35d9ff,
+                    #6554ff
+                );
+
+            box-shadow:
+                0 0 16px
+                rgba(53,217,255,0.28);
+        }
+
+
+        .mp-discord:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 0 28px
+                rgba(53,217,255,0.55);
+        }
+
+
+        /* YOUTUBE */
+
+        .mp-youtube {
+
+            color: #ffffff;
+
+            border-color: #ff315d;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff315d,
+                    #873dff
+                );
+
+            box-shadow:
+                0 0 16px
+                rgba(255,49,93,0.25);
+        }
+
+
+        .mp-youtube:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 0 28px
+                rgba(255,49,93,0.50);
+        }
+
+
+        /* BACK */
+
+        .mp-back {
+
+            color: #ffffff;
+
+            border-color: #35d9ff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #173b47,
+                    #241d50
+                );
+
+            box-shadow:
+                0 0 12px
+                rgba(53,217,255,0.12);
+        }
+
+
+        .mp-back:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 0 25px
+                rgba(53,217,255,0.35);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            padding:
+                35px 7%;
+
+            text-align: center;
+
+            border-top:
+                1px solid
+                rgba(231,237,242,0.07);
+        }
+
+
+        footer p {
+
+            color: #68727a;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        footer span {
+            color: #35d9ff;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+
+                height: 70px;
+
+                padding: 0 5%;
+            }
+
+
+            .logo {
+
+                font-size: 18px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .navbar nav {
+                display: none;
+            }
+
+
+            .discord-btn {
+
+                padding: 9px 13px;
+
+                font-size: 9px;
+            }
+
+
+            .multiplayer-page {
+
+                padding-top: 70px;
+            }
+
+
+            .mp-hero {
+
+                padding:
+                    90px 6%
+                    65px;
+            }
+
+
+            .mp-hero h1 {
+
+                font-size: 50px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .hero-text {
+
+                font-size: 13px;
+            }
+
+
+            .voice-orb {
+
+                width: 125px;
+
+                height: 125px;
+
+                margin-top: 50px;
+            }
+
+
+            .voice-orb span {
+                font-size: 38px;
+            }
+
+
+            .mp-details {
+
+                padding:
+                    65px 6%
+                    70px;
+            }
+
+
+            .voice-section {
+
+                padding:
+                    10px 6%
+                    70px;
+            }
+
+
+            .voice-item {
+
+                grid-template-columns:
+                    55px 1fr;
+
+                gap: 15px;
+
+                padding: 25px 0;
+            }
+
+
+            .voice-content h3 {
+                font-size: 17px;
+            }
+
+
+            .voice-content p {
+                font-size: 12px;
+            }
+
+
+            .discord-section,
+            .final-section {
+
+                padding:
+                    20px 6%
+                    70px;
+            }
+
+
+            .mp-actions {
+
+                flex-direction: column;
+
+                width: 100%;
+            }
+
+
+            .mp-btn {
+
+                width: 100%;
+
+                max-width: 270px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
+
+    <header class="navbar">
+
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            ALIEN<span>ZORD</span>
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="minecraft.html">
+                Minecraft
+            </a>
+
+            <a href="index.html#gamehub">
+                GameHub
+            </a>
+
+            <a href="index.html#community">
+                Community
+            </a>
+
+        </nav>
+
+
+        <a
+            href="https://discord.gg/Jzn6PaJcd"
+            class="discord-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            JOIN DISCORD
+        </a>
+
+
+    </header>
+
+
+
+    <main class="multiplayer-page">
+
+
+        <!-- =========================================
+             HERO
+        ========================================= -->
+
+        <section class="mp-hero">
+
+
+            <p class="small-label">
+                01 — CONNECT WITH THE COMMUNITY
+            </p>
+
+
+            <h1>
+                PLAY
+                <span>TOGETHER.</span>
+            </h1>
+
+
+            <p class="hero-text">
+
+                Minecraft becomes even better when you
+                experience it with other players.
+
+                Join the AlienZord community, connect
+                through voice chat and enjoy your
+                multiplayer sessions with people who
+                share the same passion for gaming.
+
+            </p>
+
+
+            <div class="voice-orb">
+
+                <span>🎙</span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             DETAILS
+        ========================================= -->
+
+        <section class="mp-details">
+
+
+            <p class="section-label">
+                02 — MULTIPLAYER EXPERIENCE
+            </p>
+
+
+            <h2>
+                MORE THAN
+                <span>A GAME.</span>
+            </h2>
+
+
+            <p>
+
+                Multiplayer is about more than simply
+                being online at the same time. It is about
+                talking, exploring, building, competing
+                and enjoying the game together.
+
+            </p>
+
+
+            <p>
+
+                With AlienZord, you can communicate with
+                other players through <strong>Discord Voice
+                Channels</strong> or, when supported by the
+                server setup, use <strong>in-game voice chat</strong>
+                to talk while playing.
+
+            </p>
+
+
+            <p>
+
+                Whether you are working together on a
+                large build, exploring the world, playing
+                PvP or simply hanging out with friends,
+                voice communication makes the experience
+                more connected and enjoyable.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             VOICE GUIDE
+        ========================================= -->
+
+        <section class="voice-section">
+
+
+            <div class="voice-heading">
+
+
+                <p class="section-label">
+                    03 — HOW IT WORKS
+                </p>
+
+
+                <h2>
+                    FIND YOUR
+                    <span>VOICE.</span>
+                </h2>
+
+
+            </div>
+
+
+
+            <!-- 01 -->
+
+            <div class="voice-item">
+
+
+                <div class="voice-number">
+                    01
+                </div>
+
+
+                <div class="voice-content">
+
+
+                    <h3>
+                        Join The AlienZord Discord
+                    </h3>
+
+
+                    <p>
+
+                        Enter the official AlienZord Discord
+                        community and connect with other
+                        members. Discord gives you a place
+                        to communicate even when you are
+                        outside the Minecraft world.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="voice-item">
+
+
+                <div class="voice-number">
+                    02
+                </div>
+
+
+                <div class="voice-content">
+
+
+                    <h3>
+                        Enter A Voice Channel
+                    </h3>
+
+
+                    <p>
+
+                        Join an available Discord voice
+                        channel and talk with your friends
+                        or other community members while
+                        playing together.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="voice-item">
+
+
+                <div class="voice-number">
+                    03
+                </div>
+
+
+                <div class="voice-content">
+
+
+                    <h3>
+                        Use In-Game Voice Chat
+                    </h3>
+
+
+                    <p>
+
+                        If the Minecraft server supports
+                        an in-game voice-chat system and
+                        your setup has the required
+                        compatible voice-chat component,
+                        you can communicate directly
+                        while inside the game.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="voice-item">
+
+
+                <div class="voice-number">
+                    04
+                </div>
+
+
+                <div class="voice-content">
+
+
+                    <h3>
+                        Play Together
+                    </h3>
+
+
+                    <p>
+
+                        Coordinate builds, explore new
+                        areas, participate in activities,
+                        compete in PvP or simply spend
+                        time together while staying
+                        connected through voice.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="voice-item">
+
+
+                <div class="voice-number">
+                    05
+                </div>
+
+
+                <div class="voice-content">
+
+
+                    <h3>
+                        Build The Community
+                    </h3>
+
+
+                    <p>
+
+                        Meet new players, make friends,
+                        share ideas and become part of
+                        the growing AlienZord multiplayer
+                        community.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             DISCORD
+        ========================================= -->
+
+        <section class="discord-section">
+
+
+            <p class="section-label">
+                04 — COMMUNITY
+            </p>
+
+
+            <h2>
+                YOUR CREW IS
+                <span>WAITING.</span>
+            </h2>
+
+
+            <p>
+
+                The AlienZord Discord is the place to
+                connect with the community, find players,
+                join voice channels and stay updated
+                about Minecraft activities and events.
+
+                <br><br>
+
+                Join the server and find your people.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             FINAL
+        ========================================= -->
+
+        <section class="final-section">
+
+
+            <p class="section-label">
+                05 — CONNECT
+            </p>
+
+
+            <h2>
+                READY TO
+                <span>JOIN?</span>
+            </h2>
+
+
+            <p>
+
+                Bring your friends, open your microphone
+                and jump into the AlienZord multiplayer
+                experience.
+
+                <br><br>
+
+                Play together. Talk together.
+                Create something unforgettable.
+
+            </p>
+
+
+
+            <div class="mp-actions">
+
+
+                <!-- DISCORD -->
+
+                <a
+                    href="https://discord.gg/Jzn6PaJcd"
+                    class="mp-btn mp-discord"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    JOIN DISCORD
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <a
+                    href="https://youtube.com/@alienzostudio775"
+                    class="mp-btn mp-youtube"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    YOUTUBE
+                </a>
+
+
+                <!-- BACK -->
+
+                <a
+                    href="minecraft.html"
+                    class="mp-btn mp-back"
+                >
+                    ← BACK TO MINECRAFT
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <p>
+
+            © ALIEN<span>ZORD</span> UNIVERSE —
+            MINECRAFT MULTIPLAYER
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
