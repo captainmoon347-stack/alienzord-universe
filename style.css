@@ -674,58 +674,27 @@ a {
 }
 
 .social-grid {
-    max-width: 1100px;
-
-    margin: auto;
-
+    max-width: 1000px;
+    margin: 0 auto;
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 0 10px;
 }
 
 .social-card {
-    padding: 30px 20px;
+    padding: 24px 16px;
+    min-height: 145px;
 
     border: 1px solid rgba(232,225,212,0.09);
 
     background: rgba(255,255,255,0.025);
 
     transition: 0.35s;
+
+    box-sizing: border-box;
+    overflow: hidden;
 }
-
-.social-card:hover {
-    transform: translateY(-5px);
-
-    border-color: #b99a5b;
-}
-
-.social-card span {
-    display: block;
-
-    font-size: 30px;
-
-    margin-bottom: 12px;
-}
-
-.social-card strong {
-    display: block;
-
-    font-size: 17px;
-}
-
-.social-card small {
-    color: #817b73;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
-}
-
 
 /* =========================================
    MESSAGE
