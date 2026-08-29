@@ -1481,3 +1481,24 @@ button.explore-btn:active {
         padding: 24px !important;
     }
 }
+.event-image {
+    width: 100%;
+    max-width: 1000px;
+    margin: 60px auto 10px;
+    overflow: hidden;
+
+    border: 1px solid rgba(197, 154, 67, 0.35);
+
+    background: #111;
+
+    box-shadow:
+        0 0 30px rgba(197, 154, 67, 0.15),
+        0 0 70px rgba(143, 69, 255, 0.10);
+}
+
+.event-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
