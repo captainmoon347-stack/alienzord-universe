@@ -5,10 +5,17 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Survival | AlienZord Minecraft</title>
+
+    <meta
+        name="description"
+        content="AlienZord Minecraft Survival — Build, explore and survive."
+    >
 
     <style>
 
@@ -18,331 +25,579 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #080808;
-            color: #eee8df;
+            color: #e8e1d4;
             font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
 
-        /* NAVIGATION */
+        /* =========================================
+           NAVIGATION
+        ========================================= */
 
-        nav {
-            height: 78px;
-            padding: 0 6%;
+        .navbar {
+            width: 100%;
+            min-height: 78px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            border-bottom: 1px solid
-                rgba(232,225,212,0.10);
+            padding: 0 4%;
 
-            background: #080808;
+            background: rgba(8, 8, 8, 0.96);
+
+            border-bottom: 1px solid
+                rgba(232, 225, 212, 0.10);
+
+            position: relative;
+            z-index: 10;
         }
+
 
         .logo {
-            font-size: 22px;
-            font-weight: bold;
+            font-size: 27px;
+            font-weight: 700;
             letter-spacing: 4px;
+            color: #e8e1d4;
         }
 
-        .nav-links {
+        .logo span {
+            color: #b99a5b;
+        }
+
+
+        nav {
             display: flex;
-            gap: 28px;
+            gap: 35px;
+        }
+
+        nav a {
+            color: #918b82;
+            text-decoration: none;
 
             font-family: Arial, sans-serif;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e8e1d4;
+        }
+
+
+        .discord-btn {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            color: #e8e1d4;
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+
             font-size: 11px;
-            letter-spacing: 1px;
-        }
+            font-weight: 700;
 
-        .nav-links a {
-            color: #99938b;
-            transition: 0.3s;
-        }
+            letter-spacing: 1.5px;
 
-        .nav-links a:hover {
-            color: #b99a5b;
-        }
-
-        .discord-top {
             border: 1px solid #b99a5b;
-            padding: 10px 18px;
-
-            font-family: Arial, sans-serif;
-            font-size: 10px;
-            letter-spacing: 1px;
 
             transition: 0.3s;
         }
 
-        .discord-top:hover {
-            background: #b99a5b;
-            color: #080808;
+        .discord-btn:hover {
+            color: #ffffff;
+
+            background: linear-gradient(
+                135deg,
+                #ff304f,
+                #a52cff
+            );
+
+            border-color: transparent;
+
+            box-shadow:
+                0 0 15px rgba(255, 48, 79, 0.35),
+                0 0 25px rgba(165, 44, 255, 0.25);
         }
 
 
-        /* MAIN */
+        /* =========================================
+           MAIN
+        ========================================= */
 
-        .page {
-            max-width: 1050px;
+        .survival-page {
+            width: 100%;
+            max-width: 1200px;
+
             margin: auto;
-            padding: 100px 7% 80px;
+
+            padding: 90px 7% 100px;
         }
 
 
-        /* HERO */
+        /* =========================================
+           HERO
+        ========================================= */
 
-        .hero {
+        .survival-hero {
             text-align: center;
+
             padding-bottom: 65px;
+
+            border-bottom: 1px solid
+                rgba(232, 225, 212, 0.08);
         }
 
-        .label {
+
+        .hero-small {
             color: #b99a5b;
 
             font-family: Arial, sans-serif;
-            font-size: 10px;
+
+            font-size: 11px;
+            font-weight: 700;
+
             letter-spacing: 4px;
-
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(55px, 10vw, 105px);
-            line-height: 0.95;
-
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #b99a5b;
-        }
-
-        .hero-intro {
-            max-width: 750px;
-            margin: auto;
-
-            color: #99938b;
-
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-
-
-        /* CONTENT */
-
-        .content-section {
-            padding: 70px 0;
-
-            border-top: 1px solid
-                rgba(232,225,212,0.08);
-        }
-
-        .content-section h2 {
-            font-size: clamp(34px, 6vw, 60px);
-            line-height: 1.05;
-
-            margin-bottom: 25px;
-        }
-
-        .content-section h2 span {
-            color: #b99a5b;
-        }
-
-        .content-section p {
-            max-width: 850px;
-
-            color: #a09a92;
-
-            font-family: Arial, sans-serif;
-            font-size: 14px;
 
             margin-bottom: 18px;
         }
 
 
-        /* MAIN IMAGE */
+        .survival-hero h1 {
+            font-size: clamp(52px, 9vw, 100px);
 
-        .survival-image {
-            width: 100%;
-            margin: 20px 0 80px;
+            line-height: 0.95;
 
-            border: 1px solid
-                rgba(232,225,212,0.12);
+            letter-spacing: -4px;
 
-            display: block;
+            margin-bottom: 25px;
         }
 
 
-        /* TEXT INFORMATION */
-
-        .info-block {
-            margin-top: 35px;
-        }
-
-        .info-block h3 {
-            color: #eee8df;
-
-            font-size: 25px;
-
-            margin-bottom: 10px;
-        }
-
-        .info-block h3 span {
+        .survival-hero h1 span {
             color: #b99a5b;
         }
 
 
-        /* FINAL MESSAGE */
+        .hero-description {
+            max-width: 760px;
 
-        .final-section {
-            text-align: center;
-
-            padding: 80px 0 50px;
-
-            border-top: 1px solid
-                rgba(232,225,212,0.08);
-        }
-
-        .final-section h2 {
-            font-size: clamp(35px, 6vw, 60px);
-
-            margin-bottom: 20px;
-        }
-
-        .final-section h2 span {
-            color: #b99a5b;
-        }
-
-        .final-section p {
-            max-width: 720px;
             margin: auto;
 
-            color: #99938b;
+            color: #918b82;
 
             font-family: Arial, sans-serif;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           IMAGE
+        ========================================= */
+
+        .survival-image-section {
+            padding: 75px 0 35px;
+        }
+
+
+        .survival-image {
+            display: block;
+
+            width: 100%;
+
+            max-width: 1100px;
+
+            height: auto;
+
+            margin: auto;
+
+            border: 1px solid
+                rgba(185, 154, 91, 0.25);
+
+            box-shadow:
+                0 0 30px rgba(0, 0, 0, 0.55);
+
+            transition: 0.4s;
+        }
+
+
+        .survival-image:hover {
+            border-color: rgba(185, 154, 91, 0.55);
+
+            box-shadow:
+                0 0 35px rgba(185, 154, 91, 0.10);
+        }
+
+
+        /* =========================================
+           CONTENT
+        ========================================= */
+
+        .survival-content {
+            padding: 45px 0;
+        }
+
+
+        .section-label {
+            color: #b99a5b;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .survival-content h2 {
+            font-size: clamp(38px, 6vw, 65px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .survival-content h2 span {
+            color: #b99a5b;
+        }
+
+
+        .survival-content p {
+            max-width: 900px;
+
+            color: #9a948c;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .survival-content strong {
+            color: #e8e1d4;
+        }
+
+
+        /* =========================================
+           GUIDE TEXT
+        ========================================= */
+
+        .guide-section {
+            padding: 55px 0;
+
+            border-top: 1px solid
+                rgba(232, 225, 212, 0.07);
+        }
+
+
+        .guide-section h3 {
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+            color: #e8e1d4;
+        }
+
+
+        .guide-section h3 span {
+            color: #b99a5b;
+        }
+
+
+        .guide-section p {
+            max-width: 900px;
+
+            color: #918b82;
+
+            font-family: Arial, sans-serif;
+
             font-size: 14px;
         }
 
 
-        /* BUTTONS */
+        /* =========================================
+           FINAL MESSAGE
+        ========================================= */
 
-        .buttons {
-            margin-top: 35px;
+        .final-message {
+            padding: 70px 0;
 
+            text-align: center;
+
+            border-top: 1px solid
+                rgba(232, 225, 212, 0.08);
+        }
+
+
+        .final-message h2 {
+            font-size: clamp(35px, 6vw, 62px);
+
+            line-height: 1;
+
+            margin-bottom: 22px;
+        }
+
+
+        .final-message h2 span {
+            color: #b99a5b;
+        }
+
+
+        .final-message p {
+            max-width: 700px;
+
+            margin: auto auto 35px;
+
+            color: #918b82;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .page-actions {
             display: flex;
+
             justify-content: center;
+
+            align-items: center;
+
             gap: 12px;
 
             flex-wrap: wrap;
         }
 
-        .btn {
+
+        .glow-btn {
             display: inline-block;
 
-            padding: 12px 20px;
+            padding: 11px 18px;
+
+            min-width: 125px;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            text-decoration: none;
 
             font-family: Arial, sans-serif;
+
             font-size: 10px;
-            font-weight: bold;
+
+            font-weight: 800;
 
             letter-spacing: 1.5px;
 
-            border: 1px solid
-                rgba(232,225,212,0.25);
+            text-transform: uppercase;
 
-            transition: 0.3s;
-        }
+            border-radius: 3px;
 
-        .btn-discord {
-            background: #b99a5b;
-            color: #080808;
+            border: 1px solid rgba(255,255,255,0.18);
 
-            border-color: #b99a5b;
-        }
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff3154,
+                    #c528ff
+                );
 
-        .btn-youtube {
-            border-color: #8b1e1e;
-            color: #ffffff;
-            background: #8b1e1e;
-        }
+            box-shadow:
+                0 0 10px rgba(255, 49, 84, 0.35),
+                0 0 18px rgba(197, 40, 255, 0.25);
 
-        .btn-back {
-            border-color: rgba(232,225,212,0.3);
-            color: #eee8df;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
 
-        /* FOOTER */
+        .glow-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 15px rgba(255, 49, 84, 0.55),
+                0 0 28px rgba(197, 40, 255, 0.45);
+        }
+
+
+        .youtube-btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff1744,
+                    #ff4b2b
+                );
+
+            box-shadow:
+                0 0 10px rgba(255, 23, 68, 0.35);
+        }
+
+
+        .youtube-btn:hover {
+            box-shadow:
+                0 0 20px rgba(255, 23, 68, 0.55);
+        }
+
+
+        .back-btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b2cff,
+                    #d22cff
+                );
+
+            box-shadow:
+                0 0 10px rgba(123, 44, 255, 0.35);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
 
         footer {
-            padding: 35px 7%;
+            padding: 35px 5%;
 
             text-align: center;
 
             border-top: 1px solid
-                rgba(232,225,212,0.08);
+                rgba(232, 225, 212, 0.07);
         }
+
 
         footer p {
             color: #6f6a64;
 
             font-family: Arial, sans-serif;
+
             font-size: 10px;
 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
 
-        /* MOBILE */
+        footer span {
+            color: #b99a5b;
+        }
 
-        @media (max-width: 700px) {
 
-            nav {
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .navbar {
                 padding: 0 5%;
             }
 
-            .nav-links {
+            nav {
                 display: none;
             }
 
             .logo {
-                font-size: 18px;
+                font-size: 21px;
             }
 
-            .discord-top {
-                padding: 8px 11px;
-                font-size: 8px;
+            .discord-btn {
+                padding: 10px 14px;
+                font-size: 9px;
             }
 
-            .page {
-                padding-top: 65px;
+            .survival-page {
+                padding:
+                    60px 5%
+                    70px;
             }
 
-            .content-section {
-                padding: 55px 0;
+            .survival-hero {
+                padding-bottom: 45px;
             }
 
-            .survival-image {
-                margin-bottom: 50px;
+            .survival-hero h1 {
+                font-size: 55px;
+                letter-spacing: -2px;
             }
 
-            .buttons {
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .survival-image-section {
+                padding: 45px 0 20px;
+            }
+
+            .survival-content {
+                padding: 35px 0;
+            }
+
+            .guide-section {
+                padding: 40px 0;
+            }
+
+            .final-message {
+                padding: 50px 0;
+            }
+
+            .glow-btn {
+                min-width: 115px;
+                padding: 10px 14px;
+                font-size: 9px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .discord-btn {
+                display: none;
+            }
+
+            .survival-hero h1 {
+                font-size: 48px;
+            }
+
+            .survival-content h2 {
+                font-size: 39px;
+            }
+
+            .page-actions {
                 flex-direction: column;
             }
 
-            .btn {
-                width: 100%;
-                text-align: center;
+            .glow-btn {
+                width: 170px;
             }
 
         }
@@ -355,343 +610,366 @@
 <body>
 
 
-<!-- NAVIGATION -->
+    <!-- =========================================
+         NAVIGATION
+    ========================================= -->
 
-<nav>
+    <header class="navbar">
 
-    <div class="logo">
-        ALIENZORD
-    </div>
-
-
-    <div class="nav-links">
-
-        <a href="index.html">
-            HOME
+        <a
+            href="index.html"
+            class="logo"
+            style="text-decoration:none;"
+        >
+            ALIEN<span>ZORD</span>
         </a>
 
-        <a href="minecraft.html">
-            GAMEHUB
-        </a>
 
-        <a href="index.html#community">
-            COMMUNITY
-        </a>
+        <nav>
 
-    </div>
+            <a href="index.html">
+                Home
+            </a>
 
+            <a href="minecraft.html">
+                Minecraft
+            </a>
 
-    <a
-        href="https://discord.gg/Jzn6PaJcd"
-        target="_blank"
-        class="discord-top"
-    >
-        JOIN DISCORD
-    </a>
+            <a href="index.html#gamehub">
+                GameHub
+            </a>
 
-</nav>
+            <a href="index.html#community">
+                Community
+            </a>
 
+        </nav>
 
-
-<main class="page">
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="label">
-        ALIENZORD × MINECRAFT
-    </div>
-
-    <h1>
-        SURVIVAL
-        <span>MODE</span>
-    </h1>
-
-    <p class="hero-intro">
-
-        Enter a world where every block has a purpose,
-        every journey creates a story and every decision
-        shapes your adventure.
-
-        Minecraft Survival gives you the freedom to
-        gather, build, explore and create your own legacy
-        inside the AlienZord Universe.
-
-    </p>
-
-</section>
-
-
-
-<!-- FIRST DETAILS -->
-
-<section class="content-section">
-
-    <div class="label">
-        01 — THE EXPERIENCE
-    </div>
-
-    <h2>
-        BUILD YOUR
-        <span>LEGACY.</span>
-    </h2>
-
-    <p>
-
-        Survival begins with almost nothing.
-
-        Gather your first resources, craft basic tools,
-        find a safe location and create a place that you
-        can call home.
-
-    </p>
-
-    <p>
-
-        As you progress, your small beginning can become
-        a powerful base, a massive kingdom or a complete
-        world created around your own imagination.
-
-    </p>
-
-    <p>
-
-        Explore the environment, discover rare resources,
-        improve your equipment and prepare yourself for
-        everything the world can throw at you.
-
-    </p>
-
-</section>
-
-
-
-<!-- IMAGE -->
-
-<img
-    src="images/minecraft-survival.png"
-    alt="AlienZord Minecraft Survival"
-    class="survival-image"
->
-
-
-
-<!-- DETAILS AFTER IMAGE -->
-
-<section class="content-section">
-
-    <div class="label">
-        02 — SURVIVAL WORLD
-    </div>
-
-    <h2>
-        YOUR WORLD.
-        <span>YOUR STORY.</span>
-    </h2>
-
-
-    <div class="info-block">
-
-        <h3>
-            <span>01.</span>
-            Explore
-        </h3>
-
-        <p>
-
-            Travel through different biomes, discover
-            villages, caves and structures and search
-            for locations that can become part of your
-            adventure.
-
-        </p>
-
-    </div>
-
-
-    <div class="info-block">
-
-        <h3>
-            <span>02.</span>
-            Gather Resources
-        </h3>
-
-        <p>
-
-            Collect wood, stone, ores, food and other
-            materials. Every resource helps you progress
-            further and create better equipment.
-
-        </p>
-
-    </div>
-
-
-    <div class="info-block">
-
-        <h3>
-            <span>03.</span>
-            Build
-        </h3>
-
-        <p>
-
-            Create your own home, farms, storage systems,
-            castles, cities or anything else you can
-            imagine.
-
-        </p>
-
-    </div>
-
-
-    <div class="info-block">
-
-        <h3>
-            <span>04.</span>
-            Survive
-        </h3>
-
-        <p>
-
-            Prepare yourself for hostile mobs, dangerous
-            environments and unexpected situations.
-            Upgrade your equipment and keep improving
-            your survival skills.
-
-        </p>
-
-    </div>
-
-
-    <div class="info-block">
-
-        <h3>
-            <span>05.</span>
-            Create Your Adventure
-        </h3>
-
-        <p>
-
-            Minecraft does not force you to follow one
-            path. Create your own goals, build your own
-            projects and decide what your survival journey
-            means to you.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ALIENZORD COMMUNITY -->
-
-<section class="content-section">
-
-    <div class="label">
-        03 — ALIENZORD COMMUNITY
-    </div>
-
-    <h2>
-        SURVIVE
-        <span>TOGETHER.</span>
-    </h2>
-
-    <p>
-
-        The AlienZord Universe is built around community,
-        creativity and gaming.
-
-        Connect with other players, share your builds,
-        participate in Minecraft activities and stay
-        updated about upcoming events through our Discord
-        community.
-
-    </p>
-
-    <p>
-
-        Whether you are a builder, explorer, fighter or
-        someone who simply enjoys creating a world of your
-        own, there is always something new to experience.
-
-    </p>
-
-</section>
-
-
-
-<!-- FINAL -->
-
-<section class="final-section">
-
-    <div class="label">
-        ALIENZORD UNIVERSE
-    </div>
-
-    <h2>
-        READY TO
-        <span>PLAY?</span>
-    </h2>
-
-    <p>
-
-        Join the AlienZord community and become part of
-        the journey.
-
-        Follow the community, watch our latest content
-        and discover what's coming next.
-
-    </p>
-
-
-    <div class="buttons">
 
         <a
             href="https://discord.gg/Jzn6PaJcd"
+            class="discord-btn"
             target="_blank"
-            class="btn btn-discord"
+            rel="noopener noreferrer"
         >
             JOIN DISCORD
         </a>
 
-
-        <a
-            href="https://youtube.com/@alienzostudio775?si=mRLF1DGr3kPfoSP8"
-            target="_blank"
-            class="btn btn-youtube"
-        >
-            WATCH YOUTUBE
-        </a>
-
-
-        <a
-            href="minecraft.html"
-            class="btn btn-back"
-        >
-            ← BACK TO MINECRAFT
-        </a>
-
-    </div>
-
-</section>
-
-
-</main>
+    </header>
 
 
 
-<footer>
+    <!-- =========================================
+         MAIN PAGE
+    ========================================= -->
 
-    <p>
-        ALIENZORD UNIVERSE — MINECRAFT SURVIVAL
-    </p>
+    <main class="survival-page">
 
-</footer>
+
+        <!-- HERO -->
+
+        <section class="survival-hero">
+
+            <p class="hero-small">
+                01 — THE EXPERIENCE
+            </p>
+
+
+            <h1>
+                SURVIVAL
+                <span>WORLD.</span>
+            </h1>
+
+
+            <p class="hero-description">
+
+                Minecraft Survival is more than simply
+                collecting resources and staying alive.
+                It is about creating something that belongs
+                to you.
+
+                Start with nothing, gather your first
+                resources, establish your base and slowly
+                turn your world into something remarkable.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- IMAGE -->
+
+        <section class="survival-image-section">
+
+            <img
+                src="images/minecraft-survival.png"
+                alt="AlienZord Minecraft Survival"
+                class="survival-image"
+            >
+
+        </section>
+
+
+
+        <!-- MAIN DETAILS -->
+
+        <section class="survival-content">
+
+            <p class="section-label">
+                02 — SURVIVAL
+            </p>
+
+
+            <h2>
+                BUILD YOUR
+                <span>LEGACY.</span>
+            </h2>
+
+
+            <p>
+
+                Survival begins with a simple idea:
+                <strong>start with nothing and build something
+                that becomes yours.</strong>
+
+                Gather wood, stone, food and other resources.
+                Craft the tools you need and find a safe
+                place to begin your journey.
+
+            </p>
+
+
+            <p>
+
+                As your world grows, your small shelter can
+                become a powerful base. Explore caves,
+                discover new biomes, collect valuable
+                resources and improve your equipment.
+
+            </p>
+
+
+            <p>
+
+                There is no single way to play Survival.
+                You can build, explore, farm, trade, fight,
+                travel or simply create your own story.
+
+                The world is yours to shape.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- GUIDE 01 -->
+
+        <section class="guide-section">
+
+            <p class="section-label">
+                03 — FIRST STEP
+            </p>
+
+
+            <h3>
+                <span>Gather</span> Your First Resources
+            </h3>
+
+
+            <p>
+
+                Begin by collecting basic materials around
+                you. Wood is one of the most important
+                starting resources because it allows you to
+                create basic tools and crafting equipment.
+
+                Collect enough food to keep yourself prepared
+                and gather stone before travelling too far
+                from your starting area.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- GUIDE 02 -->
+
+        <section class="guide-section">
+
+            <p class="section-label">
+                04 — BUILD
+            </p>
+
+
+            <h3>
+                Establish Your <span>Base</span>
+            </h3>
+
+
+            <p>
+
+                Find a location that feels right for your
+                survival journey. Build a shelter where you
+                can store resources, craft equipment and
+                prepare for your next adventure.
+
+                Your first base does not need to be perfect.
+                Start small and upgrade it as your world
+                develops.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- GUIDE 03 -->
+
+        <section class="guide-section">
+
+            <p class="section-label">
+                05 — EXPLORE
+            </p>
+
+
+            <h3>
+                Explore & <span>Upgrade</span>
+            </h3>
+
+
+            <p>
+
+                Once your base is secure, start exploring.
+                Discover caves, villages, forests, mountains
+                and other hidden locations.
+
+                Collect better resources, upgrade your tools
+                and equipment and gradually prepare yourself
+                for more challenging areas of the world.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- GUIDE 04 -->
+
+        <section class="guide-section">
+
+            <p class="section-label">
+                06 — COMMUNITY
+            </p>
+
+
+            <h3>
+                Join the <span>AlienZord</span> Community
+            </h3>
+
+
+            <p>
+
+                Minecraft becomes even better when you share
+                the experience with other players.
+
+                Join the AlienZord community, meet other
+                players, participate in activities and become
+                part of the growing Minecraft GameHub.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- FINAL -->
+
+        <section class="final-message">
+
+            <p class="section-label">
+                07 — YOUR JOURNEY
+            </p>
+
+
+            <h2>
+                START
+                <span>SMART.</span>
+            </h2>
+
+
+            <p>
+
+                Gather your resources. Build your base.
+                Explore the world. Create your own story.
+
+                Your survival journey starts here.
+
+            </p>
+
+
+            <div class="page-actions">
+
+
+                <!-- DISCORD -->
+
+                <a
+                    href="https://discord.gg/Jzn6PaJcd"
+                    class="glow-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    JOIN DISCORD
+                </a>
+
+
+                <!-- YOUTUBE
+                     Replace the link below with
+                     your actual YouTube channel URL.
+                -->
+
+                <a
+                    href="https://www.youtube.com/@AlienzoStudio775"
+                    class="glow-btn youtube-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    YOUTUBE
+                </a>
+
+
+                <!-- BACK -->
+
+                <a
+                    href="minecraft.html"
+                    class="glow-btn back-btn"
+                >
+                    BACK TO MINECRAFT
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <p>
+            ALIEN<span>ZORD</span>
+            MINECRAFT GAMEHUB
+        </p>
+
+    </footer>
 
 
 </body>
