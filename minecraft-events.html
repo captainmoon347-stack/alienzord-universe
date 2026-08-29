@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events | AlienZord Minecraft</title>
+
+    <meta
+        name="description"
+        content="Minecraft Events — AlienZord Universe"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080707;
+            color: #eee5d5;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 78px;
+
+            padding: 0 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(8, 7, 7, 0.96);
+
+            border-bottom:
+                1px solid rgba(196, 153, 67, 0.18);
+
+            backdrop-filter: blur(18px);
+
+            z-index: 9999;
+        }
+
+
+        .logo {
+            color: #eee5d5;
+
+            font-size: 24px;
+            font-weight: 900;
+
+            letter-spacing: 4px;
+        }
+
+
+        .logo span {
+            color: #c59a43;
+        }
+
+
+        .navbar nav {
+            display: flex;
+            gap: 28px;
+        }
+
+
+        .navbar nav a {
+            position: relative;
+
+            color: #9b9489;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+
+        .navbar nav a:hover {
+            color: #eee5d5;
+        }
+
+
+        .navbar nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 1px;
+
+            background: #c59a43;
+
+            transition: 0.3s;
+        }
+
+
+        .navbar nav a:hover::after {
+            width: 100%;
+        }
+
+
+        .discord-btn {
+            padding: 11px 20px;
+
+            border: 1px solid #c59a43;
+
+            color: #eee5d5;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+
+        .discord-btn:hover {
+            color: #080707;
+
+            background: #c59a43;
+
+            box-shadow:
+                0 0 22px
+                rgba(197, 154, 67, 0.38);
+        }
+
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .events-page {
+            padding-top: 78px;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .events-hero {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                125px 7%
+                90px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid
+                rgba(238,229,213,0.07);
+        }
+
+
+        .small-label {
+            margin-bottom: 18px;
+
+            color: #d34a48;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .events-hero h1 {
+            font-size:
+                clamp(50px, 9vw, 100px);
+
+            line-height: 0.92;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .events-hero h1 span {
+            color: #c59a43;
+        }
+
+
+        .hero-text {
+            max-width: 800px;
+
+            margin: auto;
+
+            color: #918b82;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           EVENT SYMBOL
+        ========================================= */
+
+        .event-symbol {
+            width: 150px;
+            height: 150px;
+
+            margin:
+                65px auto
+                10px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid
+                rgba(197,154,67,0.38);
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(197,154,67,0.16),
+                    rgba(180,45,80,0.08),
+                    transparent 70%
+                );
+
+            box-shadow:
+                0 0 35px
+                rgba(197,154,67,0.15),
+
+                0 0 80px
+                rgba(180,45,80,0.08);
+
+            transform: rotate(45deg);
+        }
+
+
+        .event-symbol span {
+            color: #c59a43;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 42px;
+
+            transform: rotate(-45deg);
+
+            filter:
+                drop-shadow(
+                    0 0 12px
+                    rgba(197,154,67,0.60)
+                );
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .events-intro {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                85px 7%
+                80px;
+        }
+
+
+        .section-label {
+            margin-bottom: 15px;
+
+            color: #d34a48;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .events-intro h2 {
+            font-size:
+                clamp(38px, 6vw, 65px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .events-intro h2 span {
+            color: #c59a43;
+        }
+
+
+        .events-intro p {
+            max-width: 900px;
+
+            color: #918b82;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.95;
+
+            margin-bottom: 20px;
+        }
+
+
+        .events-intro strong {
+            color: #eee5d5;
+        }
+
+
+        /* =========================================
+           EVENT TYPES
+        ========================================= */
+
+        .event-types {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                15px 7%
+                95px;
+        }
+
+
+        .types-heading {
+            margin-bottom: 45px;
+        }
+
+
+        .types-heading h2 {
+            font-size:
+                clamp(38px, 6vw, 65px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .types-heading h2 span {
+            color: #d34a48;
+        }
+
+
+        /* =========================================
+           EVENT ROW
+        ========================================= */
+
+        .event-row {
+            display: grid;
+
+            grid-template-columns:
+                80px 1fr;
+
+            gap: 25px;
+
+            padding: 30px 0;
+
+            border-top:
+                1px solid
+                rgba(238,229,213,0.07);
+        }
+
+
+        .event-row:last-child {
+            border-bottom:
+                1px solid
+                rgba(238,229,213,0.07);
+        }
+
+
+        .event-number {
+            color: #c59a43;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        .event-content h3 {
+            margin-bottom: 8px;
+
+            color: #eee5d5;
+
+            font-size: 20px;
+        }
+
+
+        .event-content p {
+            color: #918b82;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =========================================
+           PARTICIPATION
+        ========================================= */
+
+        .participation {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                20px 7%
+                90px;
+        }
+
+
+        .participation h2 {
+            font-size:
+                clamp(38px, 6vw, 64px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .participation h2 span {
+            color: #d34a48;
+        }
+
+
+        .participation p {
+            max-width: 900px;
+
+            color: #918b82;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================================
+           STEPS
+        ========================================= */
+
+        .steps {
+            margin-top: 35px;
+        }
+
+
+        .step {
+            display: grid;
+
+            grid-template-columns:
+                55px 1fr;
+
+            gap: 20px;
+
+            padding: 22px 0;
+
+            border-top:
+                1px solid
+                rgba(238,229,213,0.06);
+        }
+
+
+        .step-number {
+            color: #d34a48;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        .step h3 {
+            color: #eee5d5;
+
+            font-size: 17px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .step p {
+            margin: 0;
+
+            color: #858078;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           COMMUNITY
+        ========================================= */
+
+        .community-section {
+            max-width: 900px;
+
+            margin: auto;
+
+            padding:
+                20px 7%
+                85px;
+
+            text-align: center;
+        }
+
+
+        .community-section h2 {
+            font-size:
+                clamp(36px, 6vw, 60px);
+
+            line-height: 1;
+
+            margin-bottom: 24px;
+        }
+
+
+        .community-section h2 span {
+            color: #c59a43;
+        }
+
+
+        .community-section p {
+            color: #918b82;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           FINAL
+        ========================================= */
+
+        .final-section {
+            max-width: 900px;
+
+            margin: auto;
+
+            padding:
+                15px 7%
+                90px;
+
+            text-align: center;
+        }
+
+
+        .final-section h2 {
+            font-size:
+                clamp(35px, 6vw, 60px);
+
+            line-height: 1;
+
+            margin-bottom: 22px;
+        }
+
+
+        .final-section h2 span {
+            color: #d34a48;
+        }
+
+
+        .final-section p {
+            color: #918b82;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .event-actions {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+
+            margin-top: 36px;
+        }
+
+
+        .event-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 150px;
+
+            padding: 11px 19px;
+
+            border: 1px solid;
+
+            border-radius: 3px;
+
+            color: #ffffff;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+        }
+
+
+        /* DISCORD */
+
+        .event-discord {
+            border-color: #c59a43;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #c59a43,
+                    #8f45ff
+                );
+
+            box-shadow:
+                0 0 16px
+                rgba(197,154,67,0.25);
+        }
+
+
+        .event-discord:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 28px
+                rgba(197,154,67,0.50);
+        }
+
+
+        /* YOUTUBE */
+
+        .event-youtube {
+            border-color: #d34a48;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d34a48,
+                    #7e38ff
+                );
+
+            box-shadow:
+                0 0 16px
+                rgba(211,74,72,0.25);
+        }
+
+
+        .event-youtube:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 28px
+                rgba(211,74,72,0.50);
+        }
+
+
+        /* BACK */
+
+        .event-back {
+            border-color: #8f45ff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #261b3c,
+                    #40232e
+                );
+
+            box-shadow:
+                0 0 14px
+                rgba(143,69,255,0.15);
+        }
+
+
+        .event-back:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 26px
+                rgba(143,69,255,0.40);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            padding:
+                35px 7%;
+
+            text-align: center;
+
+            border-top:
+                1px solid
+                rgba(238,229,213,0.07);
+        }
+
+
+        footer p {
+            color: #6f6962;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        footer span {
+            color: #c59a43;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                height: 70px;
+
+                padding: 0 5%;
+            }
+
+
+            .logo {
+                font-size: 18px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .navbar nav {
+                display: none;
+            }
+
+
+            .discord-btn {
+                padding: 9px 13px;
+
+                font-size: 9px;
+            }
+
+
+            .events-page {
+                padding-top: 70px;
+            }
+
+
+            .events-hero {
+                padding:
+                    90px 6%
+                    65px;
+            }
+
+
+            .events-hero h1 {
+                font-size: 52px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .hero-text {
+                font-size: 13px;
+            }
+
+
+            .event-symbol {
+                width: 125px;
+                height: 125px;
+            }
+
+
+            .event-symbol span {
+                font-size: 36px;
+            }
+
+
+            .events-intro {
+                padding:
+                    65px 6%
+                    70px;
+            }
+
+
+            .event-types {
+                padding:
+                    10px 6%
+                    70px;
+            }
+
+
+            .event-row {
+                grid-template-columns:
+                    55px 1fr;
+
+                gap: 15px;
+
+                padding: 25px 0;
+            }
+
+
+            .event-content h3 {
+                font-size: 17px;
+            }
+
+
+            .event-content p {
+                font-size: 12px;
+            }
+
+
+            .participation {
+                padding:
+                    10px 6%
+                    70px;
+            }
+
+
+            .community-section,
+            .final-section {
+                padding:
+                    20px 6%
+                    70px;
+            }
+
+
+            .event-actions {
+                flex-direction: column;
+            }
+
+
+            .event-btn {
+                width: 100%;
+
+                max-width: 270px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
+
+    <header class="navbar">
+
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            ALIEN<span>ZORD</span>
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="minecraft.html">
+                Minecraft
+            </a>
+
+            <a href="index.html#gamehub">
+                GameHub
+            </a>
+
+            <a href="index.html#community">
+                Community
+            </a>
+
+        </nav>
+
+
+        <a
+            href="https://discord.gg/Jzn6PaJcd"
+            class="discord-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            JOIN DISCORD
+        </a>
+
+
+    </header>
+
+
+
+    <main class="events-page">
+
+
+        <!-- =========================================
+             HERO
+        ========================================= -->
+
+        <section class="events-hero">
+
+
+            <p class="small-label">
+                01 — ALIENZORD EVENTS
+            </p>
+
+
+            <h1>
+                PLAY.
+                <span>COMPETE.</span>
+                WIN.
+            </h1>
+
+
+            <p class="hero-text">
+
+                Enter the world of AlienZord Events —
+                where players come together for special
+                challenges, competitions and community
+                experiences inside Minecraft.
+
+            </p>
+
+
+            <div class="event-symbol">
+
+                <span>✦</span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             INTRO
+        ========================================= -->
+
+        <section class="events-intro">
+
+
+            <p class="section-label">
+                02 — THE EVENT EXPERIENCE
+            </p>
+
+
+            <h2>
+                EVERY EVENT HAS
+                <span>A STORY.</span>
+            </h2>
+
+
+            <p>
+
+                AlienZord Events are designed to give the
+                community something different to play for.
+                From competitive challenges to team-based
+                activities, every event can bring players
+                together in a new way.
+
+            </p>
+
+
+            <p>
+
+                Events may include <strong>PvP battles,
+                team competitions, special challenges,
+                survival activities, building contests</strong>
+                and other custom Minecraft experiences.
+
+            </p>
+
+
+            <p>
+
+                Event details, rules, schedules and
+                participation information can be announced
+                through the AlienZord community channels.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             EVENT TYPES
+        ========================================= -->
+
+        <section class="event-types">
+
+
+            <div class="types-heading">
+
+
+                <p class="section-label">
+                    03 — WHAT YOU CAN EXPECT
+                </p>
+
+
+                <h2>
+                    CHOOSE YOUR
+                    <span>BATTLE.</span>
+                </h2>
+
+
+            </div>
+
+
+
+            <!-- 01 -->
+
+            <div class="event-row">
+
+
+                <div class="event-number">
+                    01
+                </div>
+
+
+                <div class="event-content">
+
+
+                    <h3>
+                        PvP Competitions
+                    </h3>
+
+
+                    <p>
+
+                        Test your combat skills against
+                        other players in competitive
+                        Minecraft battles. Stay focused,
+                        adapt to your opponent and fight
+                        for the top position.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="event-row">
+
+
+                <div class="event-number">
+                    02
+                </div>
+
+
+                <div class="event-content">
+
+
+                    <h3>
+                        Team Challenges
+                    </h3>
+
+
+                    <p>
+
+                        Work with your teammates, create
+                        a strategy and complete objectives
+                        together. Communication and
+                        teamwork can make the difference.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="event-row">
+
+
+                <div class="event-number">
+                    03
+                </div>
+
+
+                <div class="event-content">
+
+
+                    <h3>
+                        Building Challenges
+                    </h3>
+
+
+                    <p>
+
+                        Turn your ideas into Minecraft
+                        creations through special building
+                        challenges. Creativity, planning
+                        and execution become your weapons.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="event-row">
+
+
+                <div class="event-number">
+                    04
+                </div>
+
+
+                <div class="event-content">
+
+
+                    <h3>
+                        Survival Challenges
+                    </h3>
+
+
+                    <p>
+
+                        Take on survival-based objectives,
+                        explore the world and work toward
+                        completing the challenge while
+                        managing your resources.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="event-row">
+
+
+                <div class="event-number">
+                    05
+                </div>
+
+
+                <div class="event-content">
+
+
+                    <h3>
+                        Special Community Events
+                    </h3>
+
+
+                    <p>
+
+                        Some events can be completely
+                        different from normal gameplay.
+                        Join the community to discover
+                        new activities and special event
+                        formats.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             PARTICIPATION
+        ========================================= -->
+
+        <section class="participation">
+
+
+            <p class="section-label">
+                04 — HOW TO PARTICIPATE
+            </p>
+
+
+            <h2>
+                GET YOUR NAME
+                <span>IN THE GAME.</span>
+            </h2>
+
+
+            <p>
+
+                Event participation information will be
+                shared through the AlienZord community.
+                Keep an eye on announcements so you do
+                not miss registration, rules or event
+                timings.
+
+            </p>
+
+
+            <p>
+
+                Depending on the event, players may need
+                to follow specific rules, join a team,
+                register beforehand or complete an event
+                requirement.
+
+            </p>
+
+
+
+            <div class="steps">
+
+
+                <!-- STEP 01 -->
+
+                <div class="step">
+
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Join The Community
+                        </h3>
+
+
+                        <p>
+
+                            Join the official AlienZord
+                            Discord and stay connected
+                            with event announcements.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- STEP 02 -->
+
+                <div class="step">
+
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Check Event Information
+                        </h3>
+
+
+                        <p>
+
+                            Read the event announcement,
+                            rules, schedule and
+                            participation requirements.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- STEP 03 -->
+
+                <div class="step">
+
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Register When Required
+                        </h3>
+
+
+                        <p>
+
+                            Follow the announced
+                            registration process if the
+                            particular event requires one.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- STEP 04 -->
+
+                <div class="step">
+
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Enter The Event
+                        </h3>
+
+
+                        <p>
+
+                            Be ready at the announced
+                            time, follow the rules and
+                            enjoy the challenge.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             COMMUNITY
+        ========================================= -->
+
+        <section class="community-section">
+
+
+            <p class="section-label">
+                05 — STAY CONNECTED
+            </p>
+
+
+            <h2>
+                THE NEXT EVENT
+                <span>COULD BE YOURS.</span>
+            </h2>
+
+
+            <p>
+
+                Events are about more than winning.
+                They are a chance to meet players,
+                build teams, test your skills and create
+                memorable moments inside the AlienZord
+                community.
+
+                <br><br>
+
+                Stay connected so you are ready when
+                the next event goes live.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             FINAL
+        ========================================= -->
+
+        <section class="final-section">
+
+
+            <p class="section-label">
+                06 — JOIN THE ACTION
+            </p>
+
+
+            <h2>
+                READY FOR THE
+                <span>NEXT EVENT?</span>
+            </h2>
+
+
+            <p>
+
+                Join AlienZord, stay updated and prepare
+                yourself for the next challenge.
+
+                <br><br>
+
+                Your next Minecraft story starts here.
+
+            </p>
+
+
+
+            <div class="event-actions">
+
+
+                <!-- DISCORD -->
+
+                <a
+                    href="https://discord.gg/Jzn6PaJcd"
+                    class="event-btn event-discord"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    JOIN DISCORD
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <a
+                    href="https://youtube.com/@alienzostudio775"
+                    class="event-btn event-youtube"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    YOUTUBE
+                </a>
+
+
+                <!-- BACK -->
+
+                <a
+                    href="minecraft.html"
+                    class="event-btn event-back"
+                >
+                    ← BACK TO MINECRAFT
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <p>
+
+            © ALIEN<span>ZORD</span> UNIVERSE —
+            MINECRAFT EVENTS
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
