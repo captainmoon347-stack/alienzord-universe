@@ -1426,79 +1426,215 @@ button.explore-btn:active {
         min-height: 38px !important;
     }
 }
-/* =====================================================
-   ALIENZORD GAME HUB — EQUAL CARD SIZE FIX
-   ===================================================== */
 
-.minecraft-features {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 20px !important;
-    align-items: start !important;
+
+/* =========================================================
+   ALIENZORD — COMPACT GLOW CTA + LIGHT ACCENT SYSTEM
+   Added without changing the existing layout/content.
+========================================================= */
+
+:root {
+    --az-red: #ff3b5c;
+    --az-purple: #b62cff;
+    --az-gold: #b99a5b;
+    --az-dark: #0b0b0a;
 }
 
-.minecraft-features .feature-box {
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    height: auto !important;
-    box-sizing: border-box !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-
-    padding: 28px !important;
-    margin: 0 !important;
+/* Subtle color atmosphere: brighter, but still premium/mafia-inspired. */
+body {
+    background:
+        radial-gradient(circle at 8% 18%, rgba(255, 45, 90, 0.055), transparent 28%),
+        radial-gradient(circle at 92% 38%, rgba(182, 44, 255, 0.055), transparent 30%),
+        #0b0b0a;
 }
 
-/* Prevent cards from becoming unnecessarily tall */
-.minecraft-features .feature-box p {
-    max-width: 100% !important;
-    margin-bottom: 0 !important;
-}
-
-/* Compact Explore button */
-.minecraft-features .explore-btn,
-.minecraft-features a.explore-btn {
-    width: auto !important;
-    min-width: 145px !important;
-    max-width: 180px !important;
-    height: 38px !important;
-    min-height: 38px !important;
-    padding: 0 15px !important;
+/* The compact button used inside GameHub cards. */
+.game-card .explore-btn,
+.explore-btn {
+    display: inline-flex !important;
+    width: fit-content !important;
+    min-width: 142px !important;
+    max-width: 190px !important;
+    height: 36px !important;
+    min-height: 36px !important;
     margin-top: 18px !important;
+    padding: 0 14px !important;
+
     align-self: flex-start !important;
-}
+    align-items: center !important;
+    justify-content: center !important;
 
-/* Mobile */
-@media (max-width: 800px) {
-    .minecraft-features {
-        grid-template-columns: 1fr !important;
-    }
+    border: 1px solid rgba(255,255,255,0.24) !important;
+    border-radius: 5px !important;
 
-    .minecraft-features .feature-box {
-        padding: 24px !important;
-    }
-}
-.event-image {
-    width: 100%;
-    max-width: 1000px;
-    margin: 60px auto 10px;
-    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        var(--az-red) 0%,
+        var(--az-purple) 100%
+    ) !important;
 
-    border: 1px solid rgba(197, 154, 67, 0.35);
-
-    background: #111;
+    color: #ffffff !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: 1.15px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
 
     box-shadow:
-        0 0 30px rgba(197, 154, 67, 0.15),
-        0 0 70px rgba(143, 69, 255, 0.10);
+        0 0 6px rgba(255, 59, 92, 0.48),
+        0 0 14px rgba(182, 44, 255, 0.28) !important;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease !important;
 }
 
-.event-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.game-card .explore-btn:hover,
+.explore-btn:hover {
+    transform: translateY(-2px) !important;
+    filter: brightness(1.12) !important;
+    box-shadow:
+        0 0 9px rgba(255, 59, 92, 0.72),
+        0 0 20px rgba(182, 44, 255, 0.52) !important;
+}
+
+/* Small button-looking label for boxes that do not have a page yet. */
+.card-explore {
+    display: inline-flex;
+    width: fit-content;
+    min-width: 122px;
+    height: 32px;
+    margin-top: 18px;
+    padding: 0 12px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 5px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 59, 92, 0.96),
+        rgba(182, 44, 255, 0.96)
+    );
+
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    box-shadow:
+        0 0 6px rgba(255, 59, 92, 0.38),
+        0 0 13px rgba(182, 44, 255, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ent-card:hover .card-explore,
+.business-card:hover .card-explore,
+.social-card:hover .card-explore {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+    box-shadow:
+        0 0 8px rgba(255, 59, 92, 0.62),
+        0 0 17px rgba(182, 44, 255, 0.40);
+}
+
+/* Keep card contents balanced after adding the CTA. */
+.game-card {
+    min-height: 250px;
+}
+
+.ent-card,
+.business-card,
+.social-card {
+    position: relative;
+}
+
+.ent-card .card-explore,
+.business-card .card-explore {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-card .card-explore {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Slightly brighter section edges without changing the layout. */
+.game-card:hover,
+.ent-card:hover,
+.business-card:hover,
+.social-card:hover {
+    box-shadow:
+        0 0 18px rgba(185, 154, 91, 0.05),
+        0 0 24px rgba(182, 44, 255, 0.035);
+}
+
+/* Make the existing major buttons match the new accent language. */
+.primary-btn,
+.message-btn {
+    background: linear-gradient(
+        135deg,
+        var(--az-red),
+        var(--az-purple)
+    ) !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.22) !important;
+    box-shadow:
+        0 0 8px rgba(255, 59, 92, 0.35),
+        0 0 18px rgba(182, 44, 255, 0.18);
+}
+
+.primary-btn:hover,
+.message-btn:hover {
+    filter: brightness(1.12);
+    box-shadow:
+        0 0 11px rgba(255, 59, 92, 0.58),
+        0 0 24px rgba(182, 44, 255, 0.34);
+}
+
+.discord-btn:hover {
+    background: linear-gradient(
+        135deg,
+        var(--az-red),
+        var(--az-purple)
+    );
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow:
+        0 0 9px rgba(255, 59, 92, 0.45),
+        0 0 18px rgba(182, 44, 255, 0.24);
+}
+
+/* Mobile: keep the CTA compact. */
+@media (max-width: 550px) {
+    .game-card .explore-btn,
+    .explore-btn {
+        min-width: 132px !important;
+        max-width: 175px !important;
+        height: 34px !important;
+        min-height: 34px !important;
+        padding: 0 12px !important;
+        font-size: 8px !important;
+    }
+
+    .card-explore {
+        min-width: 112px;
+        height: 30px;
+        padding: 0 10px;
+        font-size: 7.5px;
+    }
 }
