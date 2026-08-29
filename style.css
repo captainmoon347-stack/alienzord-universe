@@ -1683,3 +1683,451 @@ body {
         padding: 6px 8px;
     }
 }
+/* =========================================
+   BGMI PAGE FIX
+   ========================================= */
+
+.game-page {
+    padding-top: 85px;
+    min-height: 100vh;
+}
+
+/* NAVBAR FIX */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4.5%;
+
+    background: rgba(8, 8, 7, 0.96);
+    border-bottom: 1px solid rgba(185,154,91,0.22);
+    box-sizing: border-box;
+}
+
+.navbar .logo {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #eee7da;
+}
+
+.navbar .logo span {
+    color: #b99a5b;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.navbar nav a {
+    color: #d7d0c5;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #d99a20;
+}
+
+.navbar .discord-btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    color: #eee7da;
+    text-decoration: none;
+
+    border: 1px solid #b99a5b;
+
+    font-family: Georgia, serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+
+    transition: 0.3s ease;
+}
+
+.navbar .discord-btn:hover {
+    color: #0b0b0a;
+    background: #b99a5b;
+    box-shadow: 0 0 18px rgba(185,154,91,0.35);
+}
+
+
+/* =========================================
+   BGMI HERO
+   ========================================= */
+
+.bgmi-hero,
+.game-hero {
+    position: relative;
+
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 120px 7% 110px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.bgmi-hero-content,
+.game-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.bgmi-hero small,
+.game-hero small {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #d99a20;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 7px;
+    text-transform: uppercase;
+}
+
+.bgmi-hero h1,
+.game-hero h1 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    color: #eee7da;
+}
+
+.bgmi-hero h1 span,
+.game-hero h1 span {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #d99a20;
+}
+
+.bgmi-hero-description,
+.game-hero-description {
+    max-width: 850px;
+
+    margin: 35px auto 0;
+
+    color: #aaa39a;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   LONG CONTENT AREA
+   ========================================= */
+
+.bgmi-content {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 90px 6% 130px;
+
+    box-sizing: border-box;
+}
+
+.bgmi-section {
+    margin-bottom: 100px;
+}
+
+.bgmi-section-label {
+    margin-bottom: 12px;
+
+    color: #d99a20;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.bgmi-section h2 {
+    margin: 0 0 25px;
+
+    color: #eee7da;
+
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 5vw, 62px);
+
+    line-height: 1;
+}
+
+.bgmi-section h2 span {
+    color: #d99a20;
+}
+
+.bgmi-section p {
+    max-width: 900px;
+
+    color: #969088;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   BGMI FEATURE BLOCKS
+   ========================================= */
+
+.bgmi-feature {
+    padding: 35px;
+
+    margin-top: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.012)
+        );
+
+    border: 1px solid rgba(185,154,91,0.18);
+
+    transition: 0.35s ease;
+}
+
+.bgmi-feature:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(217,154,32,0.55);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35),
+        0 0 20px rgba(217,154,32,0.08);
+}
+
+.bgmi-feature h3 {
+    margin: 0 0 12px;
+
+    color: #eee7da;
+
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.bgmi-feature p {
+    margin: 0;
+
+    color: #918b82;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BGMI BUTTONS
+   ========================================= */
+
+.bgmi-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 35px;
+}
+
+.bgmi-btn {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d3d,
+            #9d20ff
+        );
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 0 12px rgba(255,50,80,0.25),
+        0 0 20px rgba(150,40,255,0.15);
+
+    transition: 0.3s ease;
+}
+
+.bgmi-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 0 18px rgba(255,50,80,0.45),
+        0 0 30px rgba(150,40,255,0.30);
+}
+
+
+/* =========================================
+   BOTTOM NAVIGATION
+   ========================================= */
+
+.bgmi-bottom {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 80px;
+    padding-top: 45px;
+
+    border-top: 1px solid rgba(232,225,212,0.08);
+}
+
+.bgmi-bottom a {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    color: #eee7da;
+
+    text-decoration: none;
+
+    border: 1px solid rgba(185,154,91,0.30);
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 1.3px;
+
+    transition: 0.3s ease;
+}
+
+.bgmi-bottom a:hover {
+    color: #0b0b0a;
+    background: #d99a20;
+
+    box-shadow: 0 0 18px rgba(217,154,32,0.35);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+        min-height: 70px;
+
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .navbar .logo {
+        font-size: 21px;
+    }
+
+    .navbar nav {
+        order: 3;
+
+        width: 100%;
+
+        gap: 15px;
+
+        overflow-x: auto;
+        justify-content: center;
+    }
+
+    .navbar nav a {
+        font-size: 9px;
+    }
+
+    .navbar .discord-btn {
+        padding: 9px 14px;
+        font-size: 9px;
+    }
+
+    .game-page {
+        padding-top: 125px;
+    }
+
+    .bgmi-hero,
+    .game-hero {
+        padding: 75px 6% 80px;
+    }
+
+    .bgmi-hero h1,
+    .game-hero h1 {
+        font-size: clamp(45px, 14vw, 75px);
+    }
+
+    .bgmi-content {
+        padding: 60px 6% 90px;
+    }
+
+    .bgmi-section {
+        margin-bottom: 70px;
+    }
+
+    .bgmi-feature {
+        padding: 25px;
+    }
+}
