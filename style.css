@@ -1638,3 +1638,79 @@ body {
         font-size: 7.5px;
     }
 }
+/* =========================================
+   SOCIAL HUB - COMPACT BUSINESS STYLE CARDS
+   ========================================= */
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.social-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 24px 14px 20px;
+    text-align: center;
+}
+
+/* Social buttons */
+.social-card a,
+.social-card .social-button,
+.social-card .explore-button {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    padding: 7px 12px;
+    font-size: 11px;
+    line-height: 1;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+/* YouTube button specifically */
+.social-card a[href*="youtube"],
+.social-card .youtube-button {
+    padding: 7px 11px;
+    font-size: 11px;
+}
+
+/* Prevent long button text from making cards wider */
+.social-card a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 600px) {
+    .social-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 0 12px;
+    }
+
+    .social-card {
+        padding: 20px 10px 18px;
+    }
+
+    .social-card a,
+    .social-card .social-button,
+    .social-card .explore-button {
+        font-size: 9px;
+        padding: 6px 8px;
+    }
+}
