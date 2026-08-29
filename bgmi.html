@@ -1717,3 +1717,1722 @@
 </body>
 
 </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BGMI | AlienZord GameHub</title>
+
+    <meta
+        name="description"
+        content="Explore BGMI, battleground strategy, weapons, ranked gameplay, squad communication and AlienZord gaming events."
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           ALIENZORD BGMI PAGE
+           Tactical • Premium • Dark • Gold • Red • Purple
+        ===================================================== */
+
+
+        /* =====================================================
+           PAGE BASE
+        ===================================================== */
+
+        .bgmi-page {
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% 12%,
+                    rgba(199, 154, 55, 0.13),
+                    transparent 34%
+                ),
+
+                radial-gradient(
+                    circle at 10% 55%,
+                    rgba(170, 25, 45, 0.06),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 70%,
+                    rgba(150, 45, 190, 0.05),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    #070807 0%,
+                    #0a0b09 45%,
+                    #080908 100%
+                );
+
+            color: #eee9df;
+
+            overflow-x: hidden;
+        }
+
+
+        .bgmi-page * {
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .bgmi-page .navbar {
+
+            position: relative;
+
+            width: 100%;
+
+            min-height: 78px;
+
+            padding: 0 5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+
+            background:
+                rgba(8, 9, 8, 0.96);
+
+            border-bottom:
+                1px solid rgba(199, 169, 75, 0.18);
+
+            z-index: 20;
+
+        }
+
+
+
+        /* LOGO */
+
+        .bgmi-page .navbar .logo {
+
+            flex-shrink: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+            letter-spacing: 4px;
+
+            color: #eee9df;
+
+            white-space: nowrap;
+
+        }
+
+
+        .bgmi-page .navbar .logo span {
+
+            color: #b99a5b;
+
+        }
+
+
+
+        /* NAVIGATION */
+
+        .bgmi-page .navbar nav {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .bgmi-page .navbar nav a {
+
+            position: relative;
+
+            display: inline-block;
+
+            padding: 8px 0;
+
+            color: #aaa397;
+
+            text-decoration: none;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.3px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .bgmi-page .navbar nav a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a51d24,
+                    #d7a12e,
+                    #a84bce
+                );
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .bgmi-page .navbar nav a:hover {
+
+            color: #eee9df;
+
+        }
+
+
+        .bgmi-page .navbar nav a:hover::after {
+
+            width: 100%;
+
+        }
+
+
+
+        /* DISCORD BUTTON */
+
+        .bgmi-page .navbar .discord-btn {
+
+            flex-shrink: 0;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 42px;
+
+            padding: 0 20px;
+
+            border:
+                1px solid #b99a5b;
+
+            color: #eee9df;
+
+            background:
+                rgba(185, 154, 91, 0.025);
+
+            text-decoration: none;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .bgmi-page .navbar .discord-btn:hover {
+
+            background: #b99a5b;
+
+            color: #080808;
+
+            box-shadow:
+                0 0 20px
+                rgba(199, 169, 75, 0.25);
+
+        }
+
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .bgmi-hero {
+
+            width: min(1180px, 92%);
+
+            min-height: 590px;
+
+            margin: 0 auto;
+
+            padding:
+                105px
+                25px
+                105px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+        }
+
+
+        .bgmi-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            width: 700px;
+
+            height: 420px;
+
+            transform:
+                translate(-50%, -50%);
+
+            background:
+                radial-gradient(
+                    ellipse,
+                    rgba(204, 154, 42, 0.09),
+                    rgba(165, 29, 36, 0.035) 38%,
+                    transparent 72%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .bgmi-hero > * {
+
+            position: relative;
+
+            z-index: 1;
+
+        }
+
+
+
+        /* SMALL TOP LABEL */
+
+        .bgmi-label {
+
+            margin-bottom: 20px;
+
+            color: #c7a94b;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 6px;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        /* MAIN TITLE */
+
+        .bgmi-hero h1 {
+
+            margin: 0;
+
+            color: #eee9df;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    48px,
+                    7vw,
+                    88px
+                );
+
+            font-weight: 900;
+
+            line-height: 0.98;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .bgmi-hero h1 span {
+
+            display: block;
+
+            margin-top: 10px;
+
+            color: #d09b32;
+
+        }
+
+
+
+        /* TITLE LINE */
+
+        .bgmi-line {
+
+            width: 85px;
+
+            height: 2px;
+
+            margin: 30px auto;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a51d24,
+                    #f0a62b,
+                    #a84bce,
+                    #a51d24
+                );
+
+            box-shadow:
+                0 0 10px
+                rgba(214, 45, 72, 0.35);
+
+        }
+
+
+
+        /* HERO DESCRIPTION */
+
+        .bgmi-intro {
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            color: #a9aaa5;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 15px;
+
+            line-height: 1.95;
+
+        }
+
+
+        .bgmi-intro strong {
+
+            color: #d8bd72;
+
+        }
+
+
+
+        /* =====================================================
+           MAIN EXPERIENCE SECTION
+        ===================================================== */
+
+        .bgmi-section {
+
+            width: min(1120px, 92%);
+
+            margin: 0 auto;
+
+            padding:
+                80px
+                0
+                110px;
+
+        }
+
+
+
+        .bgmi-section-heading {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .bgmi-section-label {
+
+            margin-bottom: 12px;
+
+            color: #c7a94b;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .bgmi-section h2 {
+
+            margin: 0;
+
+            color: #eee9df;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    35px,
+                    5vw,
+                    55px
+                );
+
+            line-height: 1.05;
+
+        }
+
+
+        .bgmi-section h2 span {
+
+            color: #b87929;
+
+        }
+
+
+        .bgmi-section-subtitle {
+
+            max-width: 750px;
+
+            margin:
+                18px
+                auto
+                0;
+
+            color: #8f928d;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 13px;
+
+            line-height: 1.85;
+
+        }
+
+
+
+        /* =====================================================
+           FIVE CARDS
+        ===================================================== */
+
+        .bgmi-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    minmax(0, 1fr)
+                );
+
+            gap: 18px;
+
+        }
+
+
+
+        .bgmi-card {
+
+            position: relative;
+
+            min-height: 250px;
+
+            padding: 30px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(49, 49, 36, 0.50),
+                    rgba(15, 16, 14, 0.96)
+                );
+
+            border:
+                1px solid
+                rgba(190, 160, 75, 0.16);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        /* LEFT TACTICAL LINE */
+
+        .bgmi-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 3px;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #9e2028,
+                    #e49a27,
+                    #a84bce,
+                    #9e2028
+                );
+
+        }
+
+
+        .bgmi-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            right: -80px;
+
+            bottom: -80px;
+
+            width: 190px;
+
+            height: 190px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(168, 75, 206, 0.08),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .bgmi-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(220, 155, 45, 0.45);
+
+            box-shadow:
+                0 12px 35px
+                rgba(0, 0, 0, 0.55),
+
+                0 0 24px
+                rgba(177, 105, 25, 0.12);
+
+        }
+
+
+
+        /* ICON */
+
+        .bgmi-icon {
+
+            margin-bottom: 17px;
+
+            font-size: 30px;
+
+            line-height: 1;
+
+        }
+
+
+
+        /* CARD TITLE */
+
+        .bgmi-card h3 {
+
+            margin:
+                0
+                0
+                11px;
+
+            color: #eee9df;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 23px;
+
+            line-height: 1.15;
+
+        }
+
+
+
+        /* CARD TEXT */
+
+        .bgmi-card p {
+
+            margin:
+                0
+                0
+                22px;
+
+            max-width: 520px;
+
+            color: #999b96;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 13px;
+
+            line-height: 1.75;
+
+        }
+
+
+
+        /* =====================================================
+           SMALL GLOW EXPLORE BUTTON
+        ===================================================== */
+
+        .bgmi-explore {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: auto;
+
+            min-height: 34px;
+
+            margin-top: auto;
+
+            padding:
+                7px
+                12px;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #a71925,
+                    #d32b35 45%,
+                    #a84bce
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.16);
+
+            border-radius: 4px;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+            line-height: 1;
+
+            box-shadow:
+                0 0 8px
+                rgba(214,45,72,0.45),
+
+                0 0 18px
+                rgba(159,49,190,0.20);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                filter 0.25s ease;
+
+        }
+
+
+        .bgmi-explore:hover {
+
+            transform:
+                translateY(-2px);
+
+            filter:
+                brightness(1.15);
+
+            box-shadow:
+                0 0 12px
+                rgba(231,48,66,0.70),
+
+                0 0 25px
+                rgba(177,54,215,0.40);
+
+        }
+
+
+
+        /* =====================================================
+           BGMI LITE
+        ===================================================== */
+
+        .bgmi-lite {
+
+            position: relative;
+
+            margin-top: 65px;
+
+            padding:
+                40px;
+
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(168,75,206,0.07),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    rgba(55,54,39,0.32),
+                    rgba(15,16,14,0.94)
+                );
+
+            border:
+                1px solid
+                rgba(199,169,75,0.16);
+
+            overflow: hidden;
+
+        }
+
+
+        .bgmi-lite::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #a51d24,
+                    #d09b32,
+                    #a84bce,
+                    transparent
+                );
+
+        }
+
+
+        .bgmi-lite h2 {
+
+            margin:
+                0
+                0
+                15px;
+
+            color: #eee9df;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 32px;
+
+        }
+
+
+        .bgmi-lite h2 span {
+
+            color: #b87929;
+
+        }
+
+
+        .bgmi-lite p {
+
+            max-width: 900px;
+
+            margin: 0;
+
+            color: #999b96;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .bgmi-lite-note {
+
+            margin-top: 18px !important;
+
+            color: #777b76 !important;
+
+            font-size: 12px !important;
+
+        }
+
+
+
+        /* =====================================================
+           BOTTOM
+        ===================================================== */
+
+        .bgmi-actions {
+
+            padding:
+                35px
+                20px
+                100px;
+
+            text-align: center;
+
+            border-top:
+                1px solid
+                rgba(232,225,212,0.06);
+
+        }
+
+
+        .bgmi-back {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 38px;
+
+            padding:
+                8px
+                15px;
+
+            color: #d6cdbd;
+
+            background:
+                rgba(199,169,75,0.02);
+
+            border:
+                1px solid
+                rgba(199,169,75,0.30);
+
+            text-decoration: none;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .bgmi-back:hover {
+
+            color: #eee9df;
+
+            background:
+                rgba(199,169,75,0.08);
+
+            border-color:
+                #c7a94b;
+
+            box-shadow:
+                0 0 15px
+                rgba(199,169,75,0.12);
+
+        }
+
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .bgmi-page .navbar {
+
+                padding:
+                    15px
+                    25px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+            }
+
+
+            .bgmi-page .navbar .logo {
+
+                width: 100%;
+
+                text-align: center;
+
+            }
+
+
+            .bgmi-page .navbar nav {
+
+                gap: 18px;
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .bgmi-hero {
+
+                min-height: 540px;
+
+                padding:
+                    90px
+                    20px;
+
+            }
+
+
+            .bgmi-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .bgmi-page .navbar {
+
+                padding:
+                    16px
+                    12px;
+
+                gap: 14px;
+
+            }
+
+
+            .bgmi-page .navbar .logo {
+
+                font-size: 21px;
+
+            }
+
+
+            .bgmi-page .navbar nav {
+
+                width: 100%;
+
+                gap: 12px;
+
+                justify-content: center;
+
+            }
+
+
+            .bgmi-page .navbar nav a {
+
+                font-size: 9px;
+
+                letter-spacing: 0.8px;
+
+            }
+
+
+            .bgmi-page .navbar .discord-btn {
+
+                min-height: 38px;
+
+                padding:
+                    0
+                    14px;
+
+                font-size: 9px;
+
+            }
+
+
+            .bgmi-hero {
+
+                width: 100%;
+
+                min-height: 500px;
+
+                padding:
+                    75px
+                    18px
+                    70px;
+
+            }
+
+
+            .bgmi-label {
+
+                font-size: 8px;
+
+                letter-spacing: 3px;
+
+            }
+
+
+            .bgmi-intro {
+
+                font-size: 13px;
+
+                line-height: 1.8;
+
+            }
+
+
+            .bgmi-section {
+
+                width: 100%;
+
+                padding:
+                    55px
+                    18px
+                    80px;
+
+            }
+
+
+            .bgmi-card {
+
+                min-height: auto;
+
+                padding: 25px;
+
+            }
+
+
+            .bgmi-card h3 {
+
+                font-size: 21px;
+
+            }
+
+
+            .bgmi-lite {
+
+                margin-top: 45px;
+
+                padding: 28px 25px;
+
+            }
+
+
+            .bgmi-explore {
+
+                min-height: 33px;
+
+                padding:
+                    7px
+                    11px;
+
+                font-size: 8px;
+
+            }
+
+
+            .bgmi-actions {
+
+                padding-bottom: 75px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="bgmi-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            ALIEN<span>ZORD</span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="gamehub.html">
+                GAMEHUB
+            </a>
+
+            <a href="community.html">
+                COMMUNITY
+            </a>
+
+            <a href="business.html">
+                BUSINESS
+            </a>
+
+        </nav>
+
+
+        <a
+            href="https://discord.gg/Jzn6PaJcd"
+            class="discord-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            JOIN DISCORD
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="bgmi-hero">
+
+
+        <div class="bgmi-label">
+
+            BATTLEGROUND
+            •
+            TACTICS
+            •
+            SQUAD
+
+        </div>
+
+
+        <h1>
+
+            BATTLEGROUND
+
+            <span>
+                INTENSITY.
+            </span>
+
+        </h1>
+
+
+        <div class="bgmi-line"></div>
+
+
+        <p class="bgmi-intro">
+
+            Welcome to the AlienZord BGMI battleground —
+            a place where strategy, teamwork, positioning
+            and fast decisions come together.
+
+            <strong>
+                Drop into the battlefield, build your loadout,
+                communicate with your squad and adapt to every
+                situation.
+            </strong>
+
+            Whether you prefer solo matches, squad gameplay,
+            ranked competition or community events, every match
+            gives you another opportunity to improve your skills
+            and create your own battlefield experience.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MAIN EXPERIENCE
+    ====================================================== -->
+
+    <section class="bgmi-section">
+
+
+        <div class="bgmi-section-heading">
+
+
+            <div class="bgmi-section-label">
+
+                01 — THE BATTLEGROUND
+
+            </div>
+
+
+            <h2>
+
+                WHAT CAN
+                <span>
+                    YOU DO?
+                </span>
+
+            </h2>
+
+
+            <p class="bgmi-section-subtitle">
+
+                Explore different parts of the BGMI experience.
+                Learn about battle royale gameplay, weapons,
+                ranked progression, squad communication and
+                AlienZord community activities.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             FIVE CARDS
+        ================================================== -->
+
+        <div class="bgmi-grid">
+
+
+
+            <!-- BATTLE ROYALE -->
+
+            <div class="bgmi-card">
+
+
+                <div class="bgmi-icon">
+                    🎯
+                </div>
+
+
+                <h3>
+                    Battle Royale
+                </h3>
+
+
+                <p>
+
+                    Drop into the battlefield, select your landing
+                    strategy, collect equipment and move through
+                    the changing zone.
+
+                    Learn when to engage, when to rotate and when
+                    to save resources for the final stages of the
+                    match.
+
+                </p>
+
+
+                <a
+                    href="bgmi-battle-royale.html"
+                    class="bgmi-explore"
+                >
+                    Explore Battle Royale
+                </a>
+
+
+            </div>
+
+
+
+            <!-- WEAPONS -->
+
+            <div class="bgmi-card">
+
+
+                <div class="bgmi-icon">
+                    🔫
+                </div>
+
+
+                <h3>
+                    Weapons & Loadout
+                </h3>
+
+
+                <p>
+
+                    Explore weapon categories, attachments,
+                    equipment and loadout planning.
+
+                    Build combinations that match your preferred
+                    gameplay style and understand how different
+                    equipment choices can change your approach
+                    to a match.
+
+                </p>
+
+
+                <a
+                    href="bgmi-weapons.html"
+                    class="bgmi-explore"
+                >
+                    Explore Loadout
+                </a>
+
+
+            </div>
+
+
+
+            <!-- RANKED -->
+
+            <div class="bgmi-card">
+
+
+                <div class="bgmi-icon">
+                    🪖
+                </div>
+
+
+                <h3>
+                    Ranked & Tiers
+                </h3>
+
+
+                <p>
+
+                    Improve your competitive gameplay by focusing
+                    on positioning, decision making, consistency
+                    and smarter rotations.
+
+                    Track your progress and work toward stronger
+                    performance across your ranked matches.
+
+                </p>
+
+
+                <a
+                    href="bgmi-ranked.html"
+                    class="bgmi-explore"
+                >
+                    Explore Ranked
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SQUAD -->
+
+            <div class="bgmi-card">
+
+
+                <div class="bgmi-icon">
+                    👥
+                </div>
+
+
+                <h3>
+                    Squad & Voice
+                </h3>
+
+
+                <p>
+
+                    Team up with friends and communicate through
+                    voice chat while playing.
+
+                    Clear callouts, teamwork, coordination and
+                    good communication can help your squad make
+                    better decisions during intense matches.
+
+                </p>
+
+
+                <a
+                    href="bgmi-squad.html"
+                    class="bgmi-explore"
+                >
+                    Explore Squad
+                </a>
+
+
+            </div>
+
+
+
+            <!-- EVENTS -->
+
+            <div class="bgmi-card">
+
+
+                <div class="bgmi-icon">
+                    🏆
+                </div>
+
+
+                <h3>
+                    Custom & Events
+                </h3>
+
+
+                <p>
+
+                    Take part in community challenges, custom
+                    matches, tournaments and special AlienZord
+                    gaming activities.
+
+                    Play with the community and turn regular
+                    matches into organised gaming experiences.
+
+                </p>
+
+
+                <a
+                    href="bgmi-events.html"
+                    class="bgmi-explore"
+                >
+                    Explore Events
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             BGMI LITE
+        ================================================== -->
+
+        <div class="bgmi-lite">
+
+
+            <div class="bgmi-section-label">
+
+                02 — LIGHTWEIGHT EXPERIENCE
+
+            </div>
+
+
+            <h2>
+
+                BGMI
+                <span>
+                    LITE.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Looking for a lighter and more comfortable
+                gaming experience?
+
+                The AlienZord BGMI Lite section focuses on
+                lightweight gameplay guidance, graphics
+                settings, performance ideas, comfortable
+                controls and squad communication for players
+                using lower-powered devices.
+
+                The goal is simple — get a smoother and more
+                comfortable gaming experience while keeping
+                your gameplay organised and enjoyable.
+
+            </p>
+
+
+            <p class="bgmi-lite-note">
+
+                Note: This section is presented as an
+                AlienZord lightweight-gaming guide and does not
+                claim the existence of an official BGMI Lite
+                client.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BACK TO GAMEHUB
+    ====================================================== -->
+
+    <div class="bgmi-actions">
+
+
+        <a
+            href="gamehub.html"
+            class="bgmi-back"
+        >
+
+            ← BACK TO GAMEHUB
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
